@@ -18,6 +18,10 @@ app.get('/', function(req, res) {
   res.render("landing.html");
 });
 
+app.get('/guides', function(req, res) {
+  res.render('guides.html');
+});
+
 app.get('/guides/*', function(req, res) {
   var guideIndex = sheets.cache.guides.indexOf(req.url);
   if (guideIndex === -1)

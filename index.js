@@ -1,6 +1,10 @@
 const express = require('express'),
-  nun = require('nunjucks');
-const app = express();
+  nun = require('nunjucks'),
+  app = express(),
+  auth = require('./auth.js'),
+  sheets = require('./sheets.js');
+
+const PORT = process.argv.length < 3 ? 3030 : parseInt(process.argv.slice(2).shift());
 
 nun.configure('templates', {
   autoescape: true,
@@ -11,4 +15,9 @@ app.get('/', function(req, res) {
   res.send(req.query);
 });
 
-app.listen(3000, () => console.log('Listening on port 3000!'));
+app.get('/sheet', function (req, res) {
+  auth(sheets.fullImport);
+  res.send('updated');
+});
+
+app.listen(PORT, () => console.log('Listening on port %d!', PORT));

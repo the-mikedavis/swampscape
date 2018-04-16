@@ -34,7 +34,7 @@ function parseHome(values) {
   values.splice(0, 4);
   let home = {};
   for (let value of values)
-    home[parseFloat(value[0])] = value[2];
+    home[value[0]] = value[2];
   return home;
 }
 
@@ -44,13 +44,13 @@ function parseGuide(values) {
   guide.name = values.shift()[1];
   values.splice(0, 2);
   for (let val in values) {
-    let section = values.substring();
-    if (val[0] === '1.1.3') {
+    let section = values.substring(); // TODO some substring
+    if (val[0] === '1.1.3')
       guide.fieldNotes = val[2];
-      continue;
-    }
-    
+    else
+      guide[val[0]] = val[2];
   }
+  return guide;
 }
 
 module.exports = { fullImport, cache };

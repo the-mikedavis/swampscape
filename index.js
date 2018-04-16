@@ -2,7 +2,8 @@ const express = require('express'),
   nun = require('nunjucks'),
   app = express(),
   auth = require('./auth.js'),
-  sheets = require('./sheets.js');
+  sheets = require('./sheets.js'),
+  path = requrie('path');
 
 const PORT = process.argv.length < 3 ? 3030 : parseInt(process.argv.slice(2).shift());
 
@@ -11,8 +12,18 @@ nun.configure('templates', {
   express: app
 });
 
+app.use(express.static(path.join(__dirname, 'static')));
+
 app.get('/', function(req, res) {
-  res.send(req.query);
+  res.render("landing.html");
+});
+
+app.get('/guides/*', function(req, res) {
+  var guideIndex = sheets.cache.guides.indexOf(req.url);
+  if (guideIndex === -1)
+    res.render('404.html');
+  else
+    res.render('guide.html', sheets.cache.guides[guideIndex]);
 });
 
 app.get('/sheet', function (req, res) {

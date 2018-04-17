@@ -3,7 +3,7 @@ const express = require('express'),
   app = express(),
   auth = require('./auth.js'),
   sheets = require('./sheets.js'),
-  path = requrie('path');
+  path = require('path');
 
 const PORT = process.argv.length < 3 ? 3030 : parseInt(process.argv.slice(2).shift());
 

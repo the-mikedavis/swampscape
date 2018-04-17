@@ -31,6 +31,11 @@ app.get('/guides/:guide', function(req, res) {
     res.render('guide.html', sheets.cache.guides[guideIndex]);
 });
 
+app.get('/swamp-symphony', function(req, res) {
+  res.render('symphony.html');
+});
+
+//  remove this once automated
 app.get('/sheet', function (req, res) {
   auth(sheets.fullImport);
   res.send('updated');

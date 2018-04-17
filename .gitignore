@@ -3,3 +3,5 @@ config
 pull.sh
 *.swp
 .sass-cache/
+*.css
+*.map

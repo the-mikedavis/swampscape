@@ -5,5 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<h1>Guides</h1>
+  <h1>Guides</h1>
+  <ul>
+  {% for guide in guides %}
+  <li><a href="/guides/{{ guide.name | urlencode }}">{{ guide.name }}</a></li>
+  {% endfor %}
+  </ul>
 {% endblock %}

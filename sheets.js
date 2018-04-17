@@ -5,10 +5,10 @@ const google = require('googleapis').google,
     //'1.0!A1:C2',
     '1.1!A1:C20',
     '1.2!A1:C20',
-    '1.3!A2:C20',
-    '1.4!A2:C20',
-    '1.5!A2:C20',
-    '1.6!A2:C20'
+    '1.3!A1:C20',
+    '1.4!A1:C20',
+    '1.5!A1:C20',
+    '1.6!A1:C20'
   ],
   fullDataRequest = {
     spreadsheetId: sheetID,
@@ -24,9 +24,10 @@ function fullImport (auth) {
   sheets.spreadsheets.values.batchGet(fullDataRequest, function (err, data) {
     if (err) return console.log('The API returned an error: ' + err);
     data = data.data.valueRanges;
-    console.log("data:", data);
-    console.log(data[1].values);
+
     cache.home = parseHome(data[0].values);
+    for (var i = 1; i < data.length; i++)
+      cache.guides.push(parseGuide(data[i].values));
   });
 }
 
@@ -38,17 +39,26 @@ function parseHome(values) {
   return home;
 }
 
+//  keys for the `guide` hashmaps
+var sections = [
+  "video",  // a link?
+  "description", // text
+  "mapdata", // an array
+  "fieldnotes"  // link to directory full of photos of notes (gallery?)
+];
+
 function parseGuide(values) {
   let guide = {};
   values.shift();
   guide.name = values.shift()[1];
   values.splice(0, 2);
-  for (let val in values) {
-    let section = values.substring(); // TODO some substring
-    if (val[0] === '1.1.3')
-      guide.fieldNotes = val[2];
-    else
-      guide[val[0]] = val[2];
+  for (var i = 0, val = values[i]; i < values.length; val = values[++i]) {
+    let section = parseInt(val[0].slice(-1));
+    if (section === 2) {
+      guide.mapdata = values.slice(i).map(arr => arr[2]);
+      break;
+    } else
+      guide[sections[section]] = val[2];
   }
   return guide;
 }

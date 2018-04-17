@@ -19,11 +19,12 @@ app.get('/', function(req, res) {
 });
 
 app.get('/guides', function(req, res) {
-  res.render('guides.html');
+  res.render('guides.html', sheets.cache);
 });
 
-app.get('/guides/*', function(req, res) {
-  var guideIndex = sheets.cache.guides.indexOf(req.url);
+app.get('/guides/:guide', function(req, res) {
+  var guideIndex = sheets.cache.guides.map(g => g.name)
+    .indexOf(req.params.guide);
   if (guideIndex === -1)
     res.render('404.html');
   else

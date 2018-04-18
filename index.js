@@ -12,6 +12,10 @@ nun.configure('templates', {
   express: app
 });
 
+auth(sheets.fullImport);
+//  update from Google sheets
+let interval = setInterval(() => auth(sheets.fullImport), 2 * 60 * 60 * 1000);
+
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', function(req, res) {
@@ -33,12 +37,6 @@ app.get('/guides/:guide', function(req, res) {
 
 app.get('/swamp-symphony', function(req, res) {
   res.render('symphony.html');
-});
-
-//  remove this once automated
-app.get('/sheet', function (req, res) {
-  auth(sheets.fullImport);
-  res.send('updated');
 });
 
 app.listen(PORT, () => console.log('Listening on port %d!', PORT));

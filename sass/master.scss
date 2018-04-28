@@ -146,3 +146,22 @@ button {
     cursor: pointer;
   }
 }
+
+.watch {
+  background-color: $nepal;
+  width: 90%;
+  margin-left: 10%;
+  padding: 10px 0;
+  border-radius: 5px;
+  i.fas {
+    color: $white;
+    margin-right: 0;
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+  }
+
+  &:hover {
+    background-color: darken($nepal, 25%);
+  }
+}

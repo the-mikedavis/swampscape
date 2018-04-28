@@ -1,3 +1,4 @@
+{% from "macros.html" import image %}
 {% extends "base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block head %}
@@ -5,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-<img src="/dist/images/0.0.jpg" class="full-size"/>
+{{ image('0.0.jpg') }}
 <div class="black indent">
   <p>{{ home['0.2'] }}</p>
 </div>

@@ -6,11 +6,12 @@
 {% endblock %}
 
 {% block body %}
+{# load in the images on the top #}
 {{ image('3.0.jpg', 'tab active') }}
 {% for i in range(1, 4) -%}
 {{ image('3.' + i + '.jpg', 'tab') }}
 {%- endfor %}
-
+{# info #}
 <div class="indent">
   <h1>About Us</h1>
 </div>

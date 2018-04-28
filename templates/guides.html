@@ -1,3 +1,4 @@
+{% from "macros.html" import image %}
 {% extends "base.html" %}
 {% block title %}Guides{% endblock %}
 {% block head %}
@@ -6,7 +7,7 @@
 
 {% block body %}
   {% for guide in guides %}
-    <img src="/dist/images/{{ guide.number }}.jpg" class="full-size" />
+    {{ image(guide.number + '.jpg') }}
     <div class="indent black">
       <h2>{{ guide.scapename }}</h3>
       <p>{{ guide.description }}</p>

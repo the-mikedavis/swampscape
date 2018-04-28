@@ -1,0 +1,84 @@
+@import "constants";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $black;
+  }
+
+  li {
+    float: right;
+
+    a {
+      display: block;
+      color: $white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      &:hover {
+        color: $grey;
+      }
+    }
+
+    &:hover {
+      background-color: #111;
+    }
+
+    &:first-child {
+      float: left;
+    }
+  }
+}
+
+img {
+  display: block;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+div.main {
+  margin: 0;
+  padding: 0;
+}
+
+div.black {
+  background-color: $black;
+  color: white;
+}
+
+div.indent {
+  padding: 50px 5%;
+}
+
+.full-size {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: $black;
+  border-top: 6px solid $everglade;
+}
+
+.tab {
+  display: none;
+  &.active {
+    display: initial;
+  }
+}

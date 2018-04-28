@@ -1,7 +1,7 @@
 const google = require('googleapis').google,
   sheetID = '1eLbOphW67xeFqWnjqFyVU_2N03S77hk8ID4gKyiX1Qs',
   fullDataRange = [
-    '0.0!A1:C8',
+    '0.0!A1:C20',
     //'1.0!A1:C2',
     '1.1!A1:C20',
     '1.2!A1:C20',
@@ -27,7 +27,7 @@ function fullImport (auth) {
 
     cache.home = parseHome(data[0].values);
     for (var i = 1; i < data.length; i++)
-      cache.guides.push(parseGuide(data[i].values));
+      cache.guides.push(parseGuide(data[i].values, '1.' + i));
   });
 }
 
@@ -44,12 +44,13 @@ var sections = [
   "video",  // a link?
   "description", // text
   "mapdata", // an array
-  "fieldnotes"  // link to directory full of photos of notes (gallery?)
+  "scapename"
 ];
 
-function parseGuide(values) {
+function parseGuide(values, number) {
   let guide = {};
   values.shift();
+  guide.number = number;
   guide.name = values.shift()[1];
   values.splice(0, 2);
   for (var i = 0, val = values[i]; i < values.length; val = values[++i]) {

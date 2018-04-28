@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body %}
-  <h1>Guides</h1>
-  <ul>
   {% for guide in guides %}
-  <li><a href="/guides/{{ guide.name | urlencode }}">{{ guide.name }}</a></li>
+    <img src="/dist/images/{{ guide.number }}.jpg" class="full-size" />
+    <div class="indent black">
+      <h2>{{ guide.scapename }}</h3>
+      <p>{{ guide.description }}</p>
+    </div>
   {% endfor %}
-  </ul>
 {% endblock %}

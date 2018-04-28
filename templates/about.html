@@ -1,3 +1,4 @@
+{% from "macros.html" import image %}
 {% extends "base.html" %}
 {% block title %}About{% endblock %}
 {% block head %}
@@ -5,4 +6,12 @@
 {% endblock %}
 
 {% block body %}
+{{ image('3.0.jpg', 'tab active') }}
+{% for i in range(1, 4) -%}
+{{ image('3.' + i + '.jpg', 'tab') }}
+{%- endfor %}
+
+<div class="indent">
+  <h1>About Us</h1>
+</div>
 {% endblock %}

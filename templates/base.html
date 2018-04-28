@@ -3,7 +3,6 @@
   <head>
     {% block head %}
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- links to favicons, css, etc.. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/dist/css/master.css">
     <title>{% block title %}{% endblock %} | Swampscape</title>
@@ -11,17 +10,28 @@
   </head>
 
   <body>
-    <!-- Navigation -->
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Explore</a></li>
+        <li><a href="/">Logo goes here</a></li> <!-- logo -->
+        <li><a href="/about">About Us</a></li> 
+        <li><a href="/swamp-symphony">Symphony</a></li>
+        <li><a href="/guides">Guides</a></li> 
       </ul>
     </nav>
 
-    <!-- Content -->
     <div class="main">
       {% block body %}{% endblock %}
     </div>
+
+    <footer>
+      <ul>
+        <li><a href="mailto:{{ home['0.3.5'] }}">Email</a></li>
+        <li><a href="{{ home['0.3.0'] }}">Facebook</a></li>
+        <li><a href="{{ home['0.3.1'] }}">Twitter</a></li>
+        <li><a href="{{ home['0.3.2'] }}">Instagram</a></li>
+        <li><a href="{{ home['0.3.3'] }}">Vimeo</a></li>
+        <li><a href="{{ home['0.3.4'] }}">Youtube</a></li>
+      </ul>
+    </footer>
   </body>
 </html>

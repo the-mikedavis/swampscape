@@ -18,31 +18,23 @@ let interval = setInterval(() => auth(sheets.fullImport), 2 * 60 * 60 * 1000);
 
 app.use(express.static(path.join(__dirname, 'static')));
 
+
+//-------------------PAGES------------------------------
 app.get('/', function(req, res) {
-  res.render("landing.html");
+  res.render("landing.html", sheets.cache);
 });
 
-//-----------TODO: revise for new guides layout---------------------
 app.get('/guides', function(req, res) {
   res.render('guides.html', sheets.cache);
 });
 
-app.get('/guides/:guide', function(req, res) {
-  var guideIndex = sheets.cache.guides.map(g => g.name)
-    .indexOf(req.params.guide);
-  if (guideIndex === -1)
-    res.render('404.html');
-  else
-    res.render('guide.html', sheets.cache.guides[guideIndex]);
-});
-//-------------------------------------------------------------------
-
 app.get('/swamp-symphony', function(req, res) {
-  res.render('symphony.html');
+  res.render('symphony.html', sheets.cache);
 });
 
 app.get('/about', function (req, res) {
-  res.render('about.html');
+  res.render('about.html', sheets.cache);
 });
+//------------------------------------------------------
 
 app.listen(PORT, () => console.log('Listening on port %d!', PORT));

@@ -1,3 +1,14 @@
 {% macro image(source="", other_classes="") %}
 <img src="/dist/images/{{ source }}" class="full-size {{other_classes}}"/>
 {% endmacro %}
+
+{% macro guide(g={}, other_classes="") %}
+<div class="guide tab {{ other_classes }}">
+  {{ image(g.number + '.jpg') }}
+  <div class="indent black">
+    <h2>{{ g.scapename }}</h3>
+    <p class="two-thirds">{{ g.description }}</p>
+    <div class="one-third"></div>
+  </div>
+</div>
+{% endmacro %}

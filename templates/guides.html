@@ -1,4 +1,4 @@
-{% from "macros.html" import image %}
+{% from "macros.html" import guide %}
 {% extends "base.html" %}
 {% block title %}Guides{% endblock %}
 {% block head %}
@@ -6,11 +6,8 @@
 {% endblock %}
 
 {% block body %}
-  {% for guide in guides %}
-    {{ image(guide.number + '.jpg') }}
-    <div class="indent black">
-      <h2>{{ guide.scapename }}</h3>
-      <p>{{ guide.description }}</p>
-    </div>
+  {{ guide(guides[0], 'active') }}
+  {% for i in range(1, guides.length) %}
+    {{ guide(guides[i]) }}
   {% endfor %}
 {% endblock %}

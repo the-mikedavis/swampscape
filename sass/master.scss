@@ -3,6 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: $black;
 }
 
 ul {
@@ -24,7 +25,7 @@ nav, footer {
       display: block;
       color: $white;
       text-align: center;
-      padding: 14px 16px;
+      padding: 17px 20px 10px 20px;
       text-decoration: none;
       &:hover {
         color: $grey;
@@ -36,7 +37,14 @@ nav, footer {
     }
 
     &:first-child {
+      padding: 0;
+      a {
+        padding-top: 10px;
+      }
       float: left;
+      img {
+        width: 120px;
+      }
     }
   }
 }
@@ -55,13 +63,21 @@ div.main {
   padding: 0;
 }
 
+
+div.indent {
+  padding: 50px 5%;
+  background-color: $white;
+}
+
 div.black {
   background-color: $black;
   color: white;
 }
 
-div.indent {
-  padding: 50px 5%;
+div.black.indent {
+  h2 {
+    color: $nepal;
+  }
 }
 
 .full-size {
@@ -73,10 +89,20 @@ div.indent {
 }
 
 footer {
-  height: 100px;
-  width: 100%;
+  //height: 60px;
+  width: auto;
+  padding: 0 5%;
   background-color: $black;
   border-top: 6px solid $everglade;
+  li {
+    &:hover {
+      background-color: $black;
+    }
+    a {
+      color: $nepal;
+      padding: 25px 8px;
+    }
+  }
 }
 
 .tab {
@@ -91,7 +117,30 @@ footer {
   width: 66%;
 }
 
-.one-third {
+.controls {
   display: inline-block;
   width: 33%;
+  position: relative;
+  top: -100px;
+
+  i.fas {
+    font-size: 20px;
+    margin-right: 5px;
+    color: $everglade;
+  }
+}
+
+#current {
+  color: $nepal;
+}
+
+// remove button styling
+button {
+  background: none;
+  color: inherit;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

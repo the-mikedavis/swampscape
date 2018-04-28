@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/dist/css/master.css">
+    <script type="text/javascript" src="/dist/js/master.js"></script>
     <title>{% block title %}{% endblock %} | Swampscape</title>
     {% endblock %}
   </head>
@@ -12,7 +13,7 @@
   <body>
     <nav>
       <ul>
-        <li><a href="/">Logo goes here</a></li>
+        <li><a href="/"><img src="/dist/images/logo.png"/></a></li>
         <li><a href="/about">About Us</a></li> 
         <li><a href="/swamp-symphony">Symphony</a></li>
         <li><a href="/guides">Guides</a></li> 
@@ -26,11 +27,11 @@
     <footer>
       <ul>
         <li><a href="mailto:{{ home['0.3.5'] }}"><i class="fas fa-envelope"></i> {{ home['0.3.5'] }}</a></li>
-        <li><a href="{{ home['0.3.0'] }}"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="{{ home['0.3.1'] }}"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="{{ home['0.3.2'] }}"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="{{ home['0.3.3'] }}"><i class="fab fa-vimeo-v"></i></a></li>
         <li><a href="{{ home['0.3.4'] }}"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="{{ home['0.3.3'] }}"><i class="fab fa-vimeo-v"></i></a></li>
+        <li><a href="{{ home['0.3.2'] }}"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="{{ home['0.3.1'] }}"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="{{ home['0.3.0'] }}"><i class="fab fa-facebook-f"></i></a></li>
       </ul>
     </footer>
   </body>

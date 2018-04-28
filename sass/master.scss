@@ -35,17 +35,19 @@ nav, footer {
     &:hover {
       background-color: #111;
     }
-
     &:first-child {
-      padding: 0;
-      a {
-        padding-top: 10px;
-      }
       float: left;
-      img {
-        width: 120px;
-      }
     }
+  }
+}
+
+#logo {
+  padding: 0;
+  a {
+    padding-top: 10px;
+  }
+  img {
+    width: 120px;
   }
 }
 

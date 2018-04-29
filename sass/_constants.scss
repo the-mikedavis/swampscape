@@ -4,3 +4,47 @@ $white: #FFFFFF;
 $nepal: #98B4C2;
 $everglade: #839B12;
 $lightgreen: #B4C75E;
+
+@font-face {
+  font-family: 'Didot';
+  src: url('/dist/fonts/didot.ttf') format('ttf');
+}
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+$display: 'Didot', serif;
+$copy: 'Quicksand', Helvetica, Arial, sans-serif;
+
+h1 {
+  font-family: $display;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: $display;
+  font-size: 36px;
+}
+
+h3 {
+  font-family: $display;
+  font-size: 30px;
+}
+
+h4, h5, h6 {
+  font-family: $copy;
+  font-size: 20px;
+}
+
+p {
+  font-family: $copy;
+  font-size: 18px;
+}
+
+li, a {
+  font-family: $copy;
+  font-size: 14px;
+}
+
+nav {
+  font-family: $copy;
+  font-size: 16px;
+}

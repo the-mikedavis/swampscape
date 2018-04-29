@@ -1,14 +1,17 @@
 const google = require('googleapis').google,
+  showdown = require('showdown'),
+  converter = new showdown.Converter(),
   sheetID = '1eLbOphW67xeFqWnjqFyVU_2N03S77hk8ID4gKyiX1Qs',
   fullDataRange = [
-    '0.0!A1:C20',
+    '0.0!A1:C20',  //if you overshoot these, it trims the results
     //'1.0!A1:C2',
     '1.1!A1:C20',
     '1.2!A1:C20',
     '1.3!A1:C20',
     '1.4!A1:C20',
     '1.5!A1:C20',
-    '1.6!A1:C20'
+    '1.6!A1:C20',
+    '3.0!A1:C20'
   ],
   fullDataRequest = {
     spreadsheetId: sheetID,
@@ -16,7 +19,8 @@ const google = require('googleapis').google,
   },
   cache = {
     home : {},
-    guides : [ ]
+    guides : [ ],
+    about: {}
   };
 
 function fullImport (auth) {
@@ -26,8 +30,10 @@ function fullImport (auth) {
     data = data.data.valueRanges;
 
     cache.home = parseHome(data[0].values);
-    for (var i = 1; i < data.length; i++)
+    for (var i = 1; i < 7; i++)
       cache.guides.push(parseGuide(data[i].values, '1.' + i));
+
+    cache.about = parseAbout(data[7].values);
   });
 }
 
@@ -37,6 +43,13 @@ function parseHome(values) {
   for (let value of values)
     home[value[0]] = value[2];
   return home;
+}
+function parseAbout(values) {
+  values.splice(0, 4);
+  let about = {};
+  for (let value of values)
+    about[value[0]] = converter.makeHtml(value[2]);
+  return about;
 }
 
 //  keys for the `guide` hashmaps

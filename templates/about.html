@@ -19,6 +19,12 @@
     <li>Ed Resources</li>
     <li>Credits</li>
   </ul>
+  <br/>
   {# content for all of them #}
+  {% for i in range(0, 4) %}
+    <div id="3.{{i}}" class="tab{{" active" if i === 0 else ""}}">
+      {{ about["3." + i] | nl2br | safe }}
+    </div>
+  {% endfor %}
 </div>
 {% endblock %}

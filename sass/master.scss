@@ -1,21 +1,5 @@
 @import "constants";
 
-svg {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  .everglade {
-    stroke: $everglade;
-    fill: $everglade;
-    &.cls-1 {
-      fill: none;
-    }
-  }
-  .nepal {
-    stroke: $nepal;
-  }
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -136,14 +120,19 @@ footer {
 
 .two-thirds {
   display: inline-block;
-  width: 66%;
+  width: 60%;
 }
 
 .controls {
   display: inline-block;
-  width: 33%;
+  float: right;
+  width: 40%;
   position: relative;
-  top: -100px;
+  top: -75px;
+  li {
+    margin-top: 10px;
+    text-align: left;
+  }
 
   i.fas {
     font-size: 20px;
@@ -209,6 +198,22 @@ ul.tab-buttons {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  .everglade {
+    stroke: $everglade;
+    fill: $everglade;
+    &.cls-1 {
+      fill: none;
+    }
+  }
+  .nepal {
+    stroke: $nepal;
   }
 }
 

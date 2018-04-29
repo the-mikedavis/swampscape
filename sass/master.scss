@@ -1,5 +1,21 @@
 @import "constants";
 
+svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  .everglade {
+    stroke: $everglade;
+    fill: $everglade;
+    &.cls-1 {
+      fill: none;
+    }
+  }
+  .nepal {
+    stroke: $nepal;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -69,16 +85,20 @@ div.main {
 div.indent {
   padding: 50px 5%;
   background-color: $white;
+  h2 {
+    text-align: center;
+  }
 }
 
 div.black {
   background-color: $black;
   color: white;
-}
-
-div.black.indent {
-  h2 {
-    color: $nepal;
+  &.indent {
+    h2 {
+      text-align: left;
+      margin-left: 0;
+      color: $nepal;
+    }
   }
 }
 
@@ -129,6 +149,11 @@ footer {
     font-size: 20px;
     margin-right: 5px;
     color: $everglade;
+
+    &.fa-map-marker-alt {
+      margin-left: 2.5px;
+      margin-right: 7px;
+    }
   }
 }
 
@@ -165,3 +190,25 @@ button {
     background-color: darken($nepal, 25%);
   }
 }
+
+ul.tab-buttons {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    display: inline-block;
+    background-color: $grey;
+    padding: 10px 0;
+    width: 32%;
+    text-align: center;
+
+    &.tab-buttons-active {
+      background-color: $nepal;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

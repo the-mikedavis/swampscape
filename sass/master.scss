@@ -41,6 +41,14 @@ nav, footer {
   }
 }
 
+footer {
+  li:first-child {
+    a {
+      padding-left: 0;
+    }
+  }
+}
+
 #logo {
   padding: 0;
   a {
@@ -248,5 +256,36 @@ body {
   }
   .popup {
     margin-top: 100px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 1s;
+
+  &.slid {
+    left: -25%;
+  }
+}
+
+div#guidenav {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 20%;
+  padding: 5%;
+  h1 {
+    color: white;
+  }
+  .thumb {
+    width: 90%;
+    margin: 5px 0;
+    border: 1px solid $white;
   }
 }

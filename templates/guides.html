@@ -3,13 +3,14 @@
 {% block title %}Guides{% endblock %}
 {% block head %}
   {{ super() }}
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvQTkRucJxFbcJ8ikHMdaKzHEaWiBCPhY&callback=initMap">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvQTkRucJxFbcJ8ikHMdaKzHEaWiBCPhY">
   </script>
   <script type="text/javascript" src="/dist/js/map.js"></script>
 {% endblock %}
 
 {% block body %}
+<div>
   {{ guide(guides[0], 'active') }}
   {% for i in range(1, guides.length) %}
     {{ guide(guides[i]) }}
@@ -17,7 +18,16 @@
   <div class="overlay" id="map">
     <button onclick='closeOverlay()'>Close X</button>
     <div class="popup" id="mapPopup">
-      <iframe src="https://snazzymaps.com/embed/67886" width="100%" height="600px" style="border:none;"></iframe>
+      <!--<iframe src="https://snazzymaps.com/embed/67886" width="100%" height="600px" style="border:none;"></iframe> -->
     </div>
   </div>
+</div>
+<div id="guidenav">
+  <h1><i>Select your guide</i></h1>
+  {% for i in range(1, guides.length + 1) %}
+  <button onclick="selectGuide('{{guides[i-1].slug}}')">
+    <img src="/dist/images/1.{{i}}_Guide_Thumbnail.jpg" class="thumb"/>
+  </button>
+  {% endfor %}
+</div>
 {% endblock %}

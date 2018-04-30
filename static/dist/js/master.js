@@ -2,16 +2,13 @@ window.markers = [];
 
 window.addEventListener('load', function () {
   var aboutTabButtons = document.getElementById('tab-buttons');
-  var videoEmbeds = document.getElementsByClassName('overlay');
+  var guideThumbs = document.getElementsByClassName('thumb');
 
   if (aboutTabButtons) {
     var lis = aboutTabButtons.getElementsByTagName('li');
     for (var i = 0; i < lis.length; i++)
       lis[i].addEventListener('click', handleAboutTabClick);
-  } else if (videoEmbeds) {
-    for (var i = 0; i < videoEmbeds.length; i++) {
-      var button = null;
-    }
+  } else if (guideThumbs) {
   }
 });
 
@@ -22,6 +19,7 @@ function handleAboutTabClick(evt) {
 
   if (element.classList.contains('tab-buttons-active')) {
     element.classList.remove('tab-buttons-active');
+    tab = document.querySelector('div.' + element.className);
     tab.classList.remove('active');
     document.querySelector('div.t3-0').classList.add('active');
     return
@@ -54,6 +52,8 @@ function closeOverlay(slug) {
 
 function openMap(data) {
   var map = document.getElementById('map');
+  var mapDiv = document.querySelector('#mapPopup > div');
+  mapDiv.style.removeProperty('position');
   map.classList.add('up');
 
   resetMap();
@@ -65,7 +65,7 @@ function openMap(data) {
     var points = coords.map(s => parseFloat(s));
     window.markers.push(new google.maps.Marker({
       position : new google.maps.LatLng(points[0], points[1]),
-      map : window.map
+      map : window.snzMap
     }));
   }
 }
@@ -75,4 +75,20 @@ function resetMap() {
     window.markers[i].setMap(null);
   }
   window.markers = [];
+}
+
+function toggleGuideNav() {
+  var b = document.body;
+
+  if (b.classList.contains('slid')) { //retract
+    b.classList.remove('slid');
+  } else { //protract
+    b.classList.add('slid');
+  }
+}
+
+function selectGuide(slug){
+  document.querySelector('div.guide.tab.active').classList.remove('active');
+  document.querySelector('div.guide.tab.' + slug).classList.add('active');
+  document.body.classList.remove('slid');
 }

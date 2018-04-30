@@ -7,7 +7,7 @@
   {{ image(g.number + '.jpg') }}
   <div class="indent black">
     <h2>{{ g.scapename }}</h3>
-    <p class="two-thirds">{{ g.description }}</p>
+    <div class="two-thirds">{{ g.description | nl2br | safe }}</div>
     <div class="controls">
       <ul>
         <li><button onclick='playFilm("{{g.slug}}")'><i class="fas fa-play-circle"></i> Play Film</button></li>

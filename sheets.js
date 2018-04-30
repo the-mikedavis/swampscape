@@ -73,7 +73,9 @@ function parseGuide(values, number) {
     if (section === 2) {
       guide.mapdata = values.slice(i).map(arr => arr[2]);
       break;
-    } else
+    } else if (section === 1)
+      guide[sections[section]] = converter.makeHtml(val[2]);
+    else
       guide[sections[section]] = val[2];
   }
   if (guide.video) {

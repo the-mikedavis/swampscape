@@ -1,4 +1,6 @@
+const VIMEO_EMBED = "https://vimeo.com/api/oembed.json?url=";
 const google = require('googleapis').google,
+  https = require('https'),
   showdown = require('showdown'),
   converter = new showdown.Converter(),
   sheetID = '1eLbOphW67xeFqWnjqFyVU_2N03S77hk8ID4gKyiX1Qs',
@@ -54,7 +56,7 @@ function parseAbout(values) {
 
 //  keys for the `guide` hashmaps
 var sections = [
-  "video",  // a link?
+  "video",  // a link
   "description", // text
   "mapdata", // an array
   "scapename"
@@ -64,7 +66,7 @@ function parseGuide(values, number) {
   let guide = {};
   values.shift();
   guide.number = number;
-  guide.name = values.shift()[1];
+  guide.slug = values.shift()[1].replace(/\s+/g, "");
   values.splice(0, 2);
   for (var i = 0, val = values[i]; i < values.length; val = values[++i]) {
     let section = parseInt(val[0].slice(-1));
@@ -73,6 +75,17 @@ function parseGuide(values, number) {
       break;
     } else
       guide[sections[section]] = val[2];
+  }
+  if (guide.video) {
+    //  go get the video embed stuff
+    https.get(VIMEO_EMBED + escape(guide.video), function (res) {
+      var data = "";
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        guide.vimeo = JSON.parse(data);
+        guide.vimeo.html = guide.vimeo.html.replace(/width="\d+"/, 'width="100%"');
+      });
+    });
   }
   return guide;
 }

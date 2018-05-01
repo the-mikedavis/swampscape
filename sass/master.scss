@@ -293,3 +293,42 @@ div#guidenav {
     border: 1px solid $white;
   }
 }
+
+div#symphony-copy {
+
+  button {
+    font-size: 18px;
+    text-align: left;
+  }
+  .controls {
+    position: relative;
+    top: 0;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+div#symphony-landing {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 1s;
+
+  &.slid {
+    left: -100%;
+  }
+
+}
+div#symphony-player {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: left 1s;
+  height: 100%;
+
+  &.slid {
+    left: 0%;
+  }
+}

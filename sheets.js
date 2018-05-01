@@ -44,6 +44,18 @@ function parseHome(values) {
   let home = {};
   for (let value of values)
     home[value[0]] = value[2];
+
+  if (home["0.4"] && /^https?:\/\//g.test(home["0.4"])) {
+    //  go get the video embed stuff
+    https.get(VIMEO_EMBED + escape(home["0.4"]), function (res) {
+      var data = "";
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        home.video = JSON.parse(data);
+        home.video.html = home.video.html.replace(/width="\d+"/, 'width="100%"');
+      });
+    });
+  }
   return home;
 }
 function parseAbout(values) {

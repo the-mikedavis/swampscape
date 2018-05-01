@@ -10,7 +10,7 @@
 <div class="black indent">
   <p class="two-thirds">{{ home['0.2'] }}</p>
   <div class="controls">
-    <button class="watch">Watch the trailer <i class="fas fa-play-circle"></i></button>
+    <button onclick="playFilm('trailer')" class="watch">Watch the trailer <i class="fas fa-play-circle"></i></button>
   </div>
 </div>
 <div class="indent">
@@ -23,5 +23,11 @@
   </div>
   <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
   <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+</div>
+<div class="overlay trailer">
+  <button onclick='closeOverlay("trailer")'>Close X</button>
+  <div class="popup">
+    {{ home.video.html | safe }}
+  </div>
 </div>
 {% endblock %}

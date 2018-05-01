@@ -13,6 +13,7 @@ const google = require('googleapis').google,
     '1.4!A1:C20',
     '1.5!A1:C20',
     '1.6!A1:C20',
+    '2.0!A1:C20',
     '3.0!A1:C20'
   ],
   fullDataRequest = {
@@ -22,6 +23,7 @@ const google = require('googleapis').google,
   cache = {
     home : {},
     guides : [ ],
+    symphony : {},
     about: {}
   };
 
@@ -35,7 +37,9 @@ function fullImport (auth) {
     for (var i = 1; i < 7; i++)
       cache.guides.push(parseGuide(data[i].values, '1.' + i));
 
-    cache.about = parseAbout(data[7].values);
+    cache.symphony = parseSymphony(data[7].values);
+
+    cache.about = parseAbout(data[8].values);
   });
 }
 
@@ -51,8 +55,12 @@ function parseHome(values) {
       var data = "";
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => {
-        home.video = JSON.parse(data);
-        home.video.html = home.video.html.replace(/width="\d+"/, 'width="100%"');
+        try {
+          home.video = JSON.parse(data);
+          home.video.html = home.video.html.replace(/width="\d+"/, 'width="100%"');
+        } catch (e) {
+          home.video = "Error! " + e;
+        }
       });
     });
   }
@@ -64,6 +72,16 @@ function parseAbout(values) {
   for (let value of values)
     about[value[0]] = converter.makeHtml(value[2]);
   return about;
+}
+
+function parseSymphony(values) {
+  values.splice(0, 4);
+  var symphony = {};
+  for (let value of values)
+    symphony[value[0]] = value[2];
+  symphony.animals = Object.keys(symphony)
+    .filter(s => /^2\.2\.\d/g.test(s));
+  return symphony;
 }
 
 //  keys for the `guide` hashmaps
@@ -97,8 +115,12 @@ function parseGuide(values, number) {
       var data = "";
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => {
-        guide.vimeo = JSON.parse(data);
-        guide.vimeo.html = guide.vimeo.html.replace(/width="\d+"/, 'width="100%"');
+        try {
+          guide.vimeo = JSON.parse(data);
+          guide.vimeo.html = guide.vimeo.html.replace(/width="\d+"/, 'width="100%"');
+        } catch (e) {
+          guide.vimeo = "Error! " + e;
+        }
       });
     });
   }
@@ -107,8 +129,12 @@ function parseGuide(values, number) {
       var data = "";
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => {
-        guide.vimeo360 = JSON.parse(data);
-        guide.vimeo360.html = guide.vimeo360.html.replace(/width="\d+"/, 'width="100%"');
+        try {
+          guide.vimeo360 = JSON.parse(data);
+          guide.vimeo360.html = guide.vimeo360.html.replace(/width="\d+"/, 'width="100%"');
+        } catch (e) {
+          guide.vimeo360 = "Error! " + e;
+        }
       });
     });
   }

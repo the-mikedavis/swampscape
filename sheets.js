@@ -59,7 +59,8 @@ var sections = [
   "video",  // a link
   "description", // text
   "mapdata", // an array
-  "scapename"
+  "scapename",  // string
+  "video360"
 ];
 
 function parseGuide(values, number) {
@@ -78,7 +79,7 @@ function parseGuide(values, number) {
     else
       guide[sections[section]] = val[2];
   }
-  if (guide.video) {
+  if (guide.video && /^https?:\/\//g.test(guide.video)) {
     //  go get the video embed stuff
     https.get(VIMEO_EMBED + escape(guide.video), function (res) {
       var data = "";
@@ -86,6 +87,16 @@ function parseGuide(values, number) {
       res.on('end', () => {
         guide.vimeo = JSON.parse(data);
         guide.vimeo.html = guide.vimeo.html.replace(/width="\d+"/, 'width="100%"');
+      });
+    });
+  }
+  if (guide.video360 && /^https?:\/\//g.test(guide.video360)) {
+    https.get(VIMEO_EMBED + escape(guide.video360), function (res) {
+      var data = "";
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        guide.vimeo360 = JSON.parse(data);
+        guide.vimeo360.html = guide.vimeo360.html.replace(/width="\d+"/, 'width="100%"');
       });
     });
   }

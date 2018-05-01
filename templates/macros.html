@@ -10,8 +10,8 @@
     <div class="two-thirds">{{ g.description | nl2br | safe }}</div>
     <div class="controls">
       <ul>
-        <li><button onclick='playFilm("{{g.slug}}")'><i class="fas fa-play-circle"></i> Play Film</button></li>
-        <li><button>
+        <li><button onclick='playFilm("flat.{{g.slug}}")'><i class="fas fa-play-circle"></i> Play Film</button></li>
+        <li><button onclick='playFilm("dimensional.{{g.slug}}")'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.5 83"><defs><style>.cls-1{fill:none;stroke-miterlimit:10;stroke-width:8px;}</style></defs><ellipse class="everglade" cx="44.25" cy="40.75" rx="17.25" ry="17.75"/><path class="cls-1 everglade" d="M11.66,55.5a37.49,37.49,0,1,0,.2-15" transform="translate(-4.5 -7)"/><polygon class="everglade" points="7.75 41.15 0 52 15.5 52 7.75 41.15"/></svg>
             Visit Landscape</button></li>
         <li><button onclick='openMap({{g.mapdata | dump}})'><i class="fas fa-map-marker-alt"></i> Open Map</button></li>
@@ -23,10 +23,17 @@
   </div>
 </div>
 
-<div class="{{ g.slug }} overlay">
-  <button onclick='closeOverlay("{{ g.slug }}")'>Close X</button>
+<div class="{{ g.slug }} flat overlay">
+  <button onclick='closeOverlay("flat.{{ g.slug }}")'>Close X</button>
   <div class="popup video">
     {{ g.vimeo.html | safe }}
+  </div>
+</div>
+
+<div class="{{ g.slug }} dimensional overlay">
+  <button onclick='closeOverlay("dimensional.{{ g.slug }}")'>Close X</button>
+  <div class="popup">
+    {{ g.vimeo360.html | safe }}
   </div>
 </div>
 {% endmacro %}

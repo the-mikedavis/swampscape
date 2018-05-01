@@ -2,14 +2,18 @@ window.markers = [];
 
 window.addEventListener('load', function () {
   var aboutTabButtons = document.getElementById('tab-buttons');
-  var guideThumbs = document.getElementsByClassName('thumb');
 
   if (aboutTabButtons) {
     var lis = aboutTabButtons.getElementsByTagName('li');
     for (var i = 0; i < lis.length; i++)
       lis[i].addEventListener('click', handleAboutTabClick);
-  } else if (guideThumbs) {
   }
+
+  // highlight the active nav tab
+  var nav = document.querySelectorAll('nav > ul > li > a');
+  for (var i = 0; i < nav.length; i++)
+    if (nav[i].href === window.location.href)
+      nav[i].classList.add('current');
 });
 
 function handleAboutTabClick(evt) {

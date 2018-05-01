@@ -41,12 +41,13 @@ nav, footer {
   }
 }
 
-footer {
-  li:first-child {
-    a {
-      padding-left: 0;
-    }
-  }
+nav li a {
+  padding: 17px 20px 10px 20px;
+  margin: 0 30px;
+}
+
+footer li:first-child a {
+  padding-left: 0;
 }
 
 #logo {
@@ -80,8 +81,35 @@ div.indent {
   h2 {
     text-align: center;
   }
-  ul{
-    list-style-type: disc;
+  &.about {
+
+    min-height: 800px;
+
+    ul {
+      list-style-type: disc;
+      &#tab-buttons {
+        list-style-type: disc;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 100px;
+        padding: 0;
+        li {
+          margin: 0;
+          display: inline-block;
+          background-color: $grey;
+          padding: 10px 0;
+          width: 32%;
+          text-align: center;
+
+          &.tab-buttons-active {
+            background-color: $nepal;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -94,10 +122,6 @@ div.black {
       margin-left: 0;
       color: $nepal;
     }
-  }
-
-  ul {
-    list-style-type: none;
   }
 }
 
@@ -160,7 +184,7 @@ footer {
   }
 }
 
-#current {
+.current {
   color: $nepal;
 }
 
@@ -195,26 +219,6 @@ button {
   }
 }
 
-ul#tab-buttons {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  li {
-    margin: 0;
-    display: inline-block;
-    background-color: $grey;
-    padding: 10px 0;
-    width: 32%;
-    text-align: center;
-
-    &.tab-buttons-active {
-      background-color: $nepal;
-    }
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
 
 svg {
   width: 20px;

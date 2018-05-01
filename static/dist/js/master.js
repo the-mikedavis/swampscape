@@ -96,3 +96,7 @@ function selectGuide(slug){
   document.querySelector('div.guide.tab.' + slug).classList.add('active');
   document.body.classList.remove('slid');
 }
+
+function slideOver() {
+  document.getElementById('symphony-landing').classList.add('slid');
+}

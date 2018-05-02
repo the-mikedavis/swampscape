@@ -453,4 +453,9 @@ div#symphony-player {
   div#symphony-landing.slid {
     left: -150%;
   }
+  div#symphony-player div#iconContainer {
+    position: static;
+    width: 500px;
+    margin: 0 auto;
+  }
 }

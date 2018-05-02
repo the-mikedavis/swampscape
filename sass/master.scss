@@ -201,7 +201,7 @@ button {
 
 .watch {
   background-color: $nepal;
-  width: 90%;
+  width: 200px;
   margin-left: 10%;
   margin-top: 150px;
   padding: 10px 0;
@@ -315,20 +315,86 @@ div#symphony-landing {
   top: 0;
   left: 0;
   transition: left 1s;
+  min-height: 900px;
 
   &.slid {
     left: -100%;
   }
 
+  .indent {
+    height: 250px;
+  }
 }
+
 div#symphony-player {
+  background-color: $white;
   position: absolute;
   top: 0;
   left: 100%;
   transition: left 1s;
-  height: 100%;
+  margin-top: 60px;
+  width: 100%;
+  height: 825px;
 
   &.slid {
     left: 0%;
+    width: 90%;
+  }
+
+  .watch {
+    display: block;
+    margin-top: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    top: 100px;
+  }
+
+  #Content .Slider.x {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .animalIcon {
+    width: 150px;
+    position: relative;
+    left: -25px;
+    cursor: -webkit-grab;
+  }
+  .sliderIcon {
+    width: 148px;
+    position: relative;
+    left: -29px;
+    top: -29px;
+    cursor: -webkit-grab;
+  }
+
+  div#iconContainer {
+    position: absolute;
+    right: 10%;
+    bottom: 100px;
+
+    $thumb_width: 100px;
+    $thumb_height: 125px;
+
+    div#soundIcons {
+      display: grid;
+      grid-template-columns: $thumb_width $thumb_width $thumb_width $thumb_width $thumb_width;
+      grid-template-rows: $thumb_height $thumb_height;
+      width: 500px;
+
+      .caption {
+        font-size: 12px;
+        text-align: center;
+        height: 30px;
+      }
+    }
   }
 }
+

@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block body %}
-<div>
+<div id="guidebody">
   {{ guide(guides[0], 'active') }}
   {% for i in range(1, guides.length) %}
     {{ guide(guides[i]) }}

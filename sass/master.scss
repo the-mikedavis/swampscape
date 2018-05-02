@@ -11,11 +11,11 @@ ul {
 }
 
 nav, footer {
+  background-color: $black;
   ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: $black;
   }
 
   li {
@@ -241,6 +241,7 @@ body {
 }
 
 .overlay {
+  z-index: 100;
   position: absolute;
   top: 0; bottom: 0; left: 0; right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -298,7 +299,7 @@ div#symphony-copy {
 
   button {
     font-size: 18px;
-    text-align: left;
+    text-align: right;
   }
   .controls {
     position: relative;
@@ -403,3 +404,52 @@ div#symphony-player {
   }
 }
 
+@media (min-width: 1200px) {
+  $dark_everglade: darken($everglade, 10%);
+
+  html, body {
+    background-color: $dark_everglade;
+  }
+
+  div.main {
+    padding: 0 10%;
+  }
+  nav {
+    padding: 0 7%;
+    margin-bottom: 5px;
+  }
+  footer {
+    padding: 0 10%;
+    border-top: 6px solid $dark_everglade;
+  }
+  div#guidebody {
+    width: 70%;
+    .nav-toggler {
+      display: none;
+    }
+  }
+
+  div#guidenav {
+    margin-top: 30px;
+    left: 70%;
+    padding: 3% 1%;
+    width: 20%;
+    overflow-y: scroll;
+    h1 {
+      margin-top: 0;
+    }
+
+    button {
+      width: 49%;
+      display: inline-block;
+      margin: 5px 0;
+      padding: 0;
+      img.thumb {
+        margin: 0;
+      }
+    }
+  }
+  div#symphony-landing.slid {
+    left: -150%;
+  }
+}

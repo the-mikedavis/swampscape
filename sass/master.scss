@@ -114,6 +114,7 @@ div.indent {
 }
 
 div.black {
+  padding: 50px 15%;
   background-color: $black;
   color: white;
   &.indent {
@@ -407,7 +408,7 @@ div#symphony-player {
 @media (min-width: 1200px) {
   $dark_everglade: darken($everglade, 10%);
 
-  html, body {
+  .main {
     background-color: $dark_everglade;
   }
 

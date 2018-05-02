@@ -132,6 +132,7 @@ function parseGuide(values, number) {
         try {
           guide.vimeo360 = JSON.parse(data);
           guide.vimeo360.html = guide.vimeo360.html.replace(/width="\d+"/, 'width="100%"');
+          guide.vimeo360.html = guide.vimeo360.html.replace(/height="\d+"/, 'height="480"');
         } catch (e) {
           guide.vimeo360 = "Error! " + e;
         }

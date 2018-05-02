@@ -108,3 +108,13 @@ function selectGuide(slug){
 function slideOver() {
   document.getElementById('symphony-landing').classList.add('slid');
 }
+
+function toggleMenu() {
+  var els = document.querySelectorAll('nav > ul > li');
+  for (var i = 0; i < els.length; i++) {
+    if (els[i].classList.contains('hamburged'))
+      els[i].classList.remove('hamburged');
+    else
+      els[i].classList.add('hamburged');
+  }
+}

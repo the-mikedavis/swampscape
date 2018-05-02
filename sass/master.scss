@@ -1,5 +1,9 @@
 @import "constants";
 
+#dropdown, #seeSymphony {
+  display: none;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -267,9 +271,6 @@ body {
 
 body {
   overflow-x: hidden;
-}
-
-body {
   position: relative;
   top: 0;
   left: 0;
@@ -457,5 +458,105 @@ div#symphony-player {
     position: static;
     width: 500px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 850px) {
+  nav li {
+
+    border-top: 1px solid $grey;
+
+    &#dropdown {
+      display: initial;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: $nepal;
+      border-top: none;
+      font-size: 20px;
+    }
+
+    float: none;
+    display: none;
+
+    &:first-child {
+      float: none;
+      display: initial;
+    }
+
+    &.hamburged {
+      display: initial;
+    }
+    a {
+      margin: 0;
+    }
+  }
+  //turn off the email
+  footer li:first-child {
+    max-width: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .two-thirds {
+    width: 100%;
+  }
+  .controls {
+    width: 100%;
+    position: static;
+    float: none;
+    button {
+      margin: 30px auto 0 auto;
+      display: block;
+    }
+    ul {
+      padding: 0;
+      text-align: left;
+    }
+  }
+  .guide-controls button {
+    margin: 0;
+    display: inline-block;
+  }
+  .indent.black h2 {
+    -webkit-margin-before: 0;
+  }
+  div#guidenav {
+    width: 40%;
+  }
+  body.slid {
+    left: -50%;
+  }
+  div.indent.about {
+    min-height: 500px;
+    ul#tab-buttons {
+      margin-bottom: 10px;
+      li {
+        height: 18px;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+  }
+  div#symphony-landing {
+    min-height: auto;
+    img {
+      height: initial;
+      width: 100%;
+    }
+    div#symphony-copy button {
+      font-size: 12px;
+      text-align: left;
+    }
+    #enterSymphony {
+      display: none;
+    }
+    #seeSymphony {
+      display: initial;
+      margin-top: 20px;
+    }
+  }
+  div#symphony-player {
+    display: none;
   }
 }

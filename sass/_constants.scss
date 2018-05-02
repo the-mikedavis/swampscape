@@ -34,12 +34,7 @@ h4, h5, h6 {
   font-size: 20px;
 }
 
-p, li {
-  font-family: $copy;
-  font-size: 18px;
-}
-
-a, button {
+p, li, a, button {
   font-family: $copy;
   font-size: 18px;
 }
@@ -47,4 +42,22 @@ a, button {
 nav {
   font-family: $copy;
   font-size: 16px;
+}
+
+@media (max-width: 850px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4, h5, h6 {
+    font-size: 16px;
+  }
+  p, li, a, button{
+    font-size: 12px;
+  }
 }

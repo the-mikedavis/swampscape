@@ -7,9 +7,9 @@
 
 {% block body %}
 {# load in the images on the top #}
-{{ image('3.0.jpg', 'tab active') }}
+{{ image('3.0.jpg', 'tab active t3-0') }}
 {% for i in range(1, 4) -%}
-{{ image('3.' + i + '.jpg', 'tab') }}
+{{ image('3.' + i + '.jpg', 'tab t3-' + i) }}
 {%- endfor %}
 {# info #}
 <div class="indent about">

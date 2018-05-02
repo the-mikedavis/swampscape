@@ -51,7 +51,6 @@ for (var i = 0; i < 3; i++)
 
 window.addEventListener('load', function () {
   var sliders = document.getElementsByClassName('Dragger');
-  //var sliders = document.querySelectorAll('div#Name');
   for (var i = 0; i < sliders.length; i++) {
     sliders[i].ondrop = handleDrop;
     sliders[i].ondragover = allowDrop;

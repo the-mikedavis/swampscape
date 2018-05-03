@@ -60,10 +60,12 @@ window.addEventListener('load', function () {
 var painfullyGlobalVariable = "";
 
 function handleDrop(ev) {
-  var el;
-  for (var i = 0; i < ev.path.length; i++)
-    if (ev.path[i].classList && ev.path[i].classList.contains('Dragger'))
-      el = ev.path[i];
+  var el = ev.target;
+  while (el != null) {
+    if (el.classList && el.classList.contains('Dragger'))
+      break;
+    el = el.parentElement;
+  }
 
   if (painfullyGlobalVariable) {
     var payload = painfullyGlobalVariable.replace(/-/g, ".");
@@ -95,4 +97,9 @@ function allowDrop(ev) {
 
 function drag(ev) {
   painfullyGlobalVariable = ev.target.id;
+}
+
+document.body.ondrop = function (event) {
+  event.preventDefault();
+  event.stopPropagation();
 }

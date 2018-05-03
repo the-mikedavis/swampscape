@@ -16,7 +16,7 @@ ul {
 
 nav, footer {
   background-color: $black;
-  padding: 0 20px;
+  padding: 0 5%;
   ul {
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@ nav, footer {
         margin-left: 0;
       }
     }
-    &:last-child {
+    &#aboutNavLink {
       a {
         padding-right: 0;
         margin-right: 0;
@@ -128,7 +128,7 @@ div.indent {
 }
 
 div.black {
-  padding: 50px 15%;
+  //padding: 50px 15%;
   background-color: $black;
   color: white;
   &.indent {

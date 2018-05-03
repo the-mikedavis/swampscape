@@ -306,6 +306,7 @@ div#guidenav {
 
 div#symphony-copy {
 
+  /*
   button {
     font-size: 18px;
     text-align: right;
@@ -313,9 +314,15 @@ div#symphony-copy {
       color: $grey;
     }
   }
+  */
   .controls {
     position: relative;
     top: 0;
+  }
+
+  #enterSymphony {
+    text-align: center;
+    margin-top: 0;
   }
 
   h2 {

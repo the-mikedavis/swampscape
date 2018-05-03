@@ -40,6 +40,12 @@ nav, footer {
     }
     &:first-child {
       float: left;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
     }
   }
 }

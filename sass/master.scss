@@ -301,6 +301,9 @@ div#symphony-copy {
   button {
     font-size: 18px;
     text-align: right;
+    &:hover {
+      color: $grey;
+    }
   }
   .controls {
     position: relative;

@@ -162,13 +162,13 @@ footer {
 
 .two-thirds {
   display: inline-block;
-  width: 60%;
+  width: 66%;
 }
 
 .controls {
   display: inline-block;
   float: right;
-  width: 40%;
+  width: 33%;
   position: relative;
   top: -75px;
   li {
@@ -406,10 +406,11 @@ div#symphony-player {
 }
 
 @media (min-width: 1200px) {
-  $dark_everglade: darken($everglade, 10%);
+  //$background_large_color: darken($everglade, 10%);
+  $background_large_color: white;
 
   .main {
-    background-color: $dark_everglade;
+    background-color: $background_large_color;
   }
 
   div.main {
@@ -421,12 +422,16 @@ div#symphony-player {
   }
   footer {
     padding: 0 10%;
-    border-top: 6px solid $dark_everglade;
+    //border-top: 6px solid $background_large_color;
+    border-top: 6px solid $everglade;
   }
   div#guidebody {
     width: 70%;
     .nav-toggler {
       display: none;
+    }
+    button {
+      text-align: left;
     }
   }
 
@@ -438,6 +443,7 @@ div#symphony-player {
     overflow-y: scroll;
     h1 {
       margin-top: 0;
+      color: black;
     }
 
     button {
@@ -447,6 +453,7 @@ div#symphony-player {
       padding: 0;
       img.thumb {
         margin: 0;
+        border: 1px solid $black;
       }
     }
   }

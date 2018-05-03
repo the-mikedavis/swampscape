@@ -7,13 +7,14 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.1.5/Tone.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/draggabilly/2.2.0/draggabilly.pkgd.min.js"></script>
   <script src="/dist/js/Interface.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.9/interact.min.js"></script>
 {% endblock %}
 
 {% block body %}
 <div id="symphony-landing">
   <img class="full-size" src="/dist/images/2.0.jpg" />
   <div id="symphony-copy" class="indent">
-    <h2>SWAMPSYMPHONY</h2>
+    <h2>SWAMP SYMPHONY</h2>
     <button onclick="startComposition()" class="two-thirds"><i class="fas fa-volume-up"></i> {{ symphony['2.0'] }}</button>
     <button id="enterSymphony" onclick="slideOver()" class="controls">&raquo; Make your own soundscape!</button>
     <button id="seeSymphony">Tap the paragraph above to hear the symphony. See this site on a computer or tablet to create your own soundscape.</button>
@@ -32,7 +33,7 @@
           <p class="caption">{{ symphony['2.2.' + i] }}</p>
         {% endif %}
 
-        <img id='2-2-{{i}}' class="animalIcon" src="/dist/images/icons/2.2.{{i}}.png" draggable="true" ondragstart="drag(event)"/>
+        <img id='2-2-{{i}}' class="animalIcon" src="/dist/images/icons/2.2.{{i}}.png"/>
 
         {% if i >= 5 %}
           <p class="caption">{{ symphony['2.2.' + i] }}</p>

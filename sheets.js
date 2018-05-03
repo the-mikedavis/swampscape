@@ -35,7 +35,7 @@ function fullImport (auth) {
 
     cache.home = parseHome(data[0].values);
     for (var i = 1; i < 7; i++)
-      cache.guides.push(parseGuide(data[i].values, '1.' + i));
+      cache.guides[i - 1] = parseGuide(data[i].values, '1.' + i);
 
     cache.symphony = parseSymphony(data[7].values);
 

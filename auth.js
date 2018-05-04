@@ -6,8 +6,8 @@ const readline = require('readline');
 const google = require('googleapis');
 const OAuth2Client = google.google.auth.OAuth2;
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
-const SECRET_PATH = 'config/client_secret.json';
-const TOKEN_PATH = 'config/credentials.json';
+const SECRET_PATH = '../config/client_secret.json';
+const TOKEN_PATH = '../config/credentials.json';
 
 /*
 // Load client secrets from a local file.

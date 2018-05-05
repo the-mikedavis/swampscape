@@ -22,7 +22,6 @@
 </div>
 <div class="indent" id="symphony-player">
   <div id="Content"><div id="sliders"></div></div>
-  <button id="startPlay" class="watch" onclick='togglePlay()'>Start</button>
   <p class="center">{{ symphony['2.1'] }}</p>
   <a href="/dist/sounds.zip"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 73.5"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:7px;}</style></defs><title>download</title><line class="cls-1" x1="3.5" y1="48" x2="3.5" y2="73"/><line class="cls-1" y1="70" x2="80" y2="70"/><line class="cls-1" x1="76.5" y1="73.5" x2="76.5" y2="48"/><line class="cls-1" x1="37.5" y1="57" x2="54.5" y2="40"/><line class="cls-1" x1="42.5" y1="57" x2="25.5" y2="40"/><line class="cls-1" x1="39.5" y1="51" x2="39.5"/></svg> Download Sounds</a>
   <div id="iconContainer">
@@ -33,7 +32,7 @@
           <p class="caption">{{ symphony['2.2.' + i] }}</p>
         {% endif %}
 
-        <img id='2-2-{{i}}' class="animalIcon" src="/dist/images/icons/2.2.{{i}}.png"/>
+        <img id='2-2-{{i}}' class="animalIcon" src="/dist/images/icons/2.2.{{i}}.png" draggable='true'/>
 
         {% if i >= 5 %}
           <p class="caption">{{ symphony['2.2.' + i] }}</p>

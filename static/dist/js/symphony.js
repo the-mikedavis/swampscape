@@ -50,6 +50,7 @@ for (var i = 0; i < 3; i++)
     max: 15
   }));
 
+/*
 window.addEventListener('load', function () {
   var sliders = document.getElementsByClassName('Dragger');
   for (var i = 0; i < sliders.length; i++) {
@@ -62,6 +63,7 @@ var painfullyGlobalVariable = "";
 
 function handleDrop(ev) {
   var el = ev.target;
+  console.log(ev);
   while (el != null) {
     if (el.classList && el.classList.contains('Dragger'))
       break;
@@ -103,4 +105,47 @@ function drag(ev) {
 document.body.ondrop = function (event) {
   event.preventDefault();
   event.stopPropagation();
+}
+*/
+
+window.addEventListener('load', function () {
+  interact('.animalIcon').draggable({
+    autoScroll: true,
+    onmove: moveDrag,
+    onend: endDrag
+  });
+  interact('.Dragger').dropzone({
+    accept: '.animalIcon',
+    ondrop: dropHandle
+  });
+});
+
+function moveDrag(ev) {
+  // make it appear and follow the move
+}
+
+function endDrag(ev) {
+  // make it disappear
+}
+
+function dropHandle(ev) {
+  var fromId = ev.relatedTarget.id,
+    payload = fromId.replace(/-/g, ".");
+  ev.target.innerHTML = '<img src="/dist/images/icons/' + payload +
+    '.png" class="sliderIcon">';
+  var source = parseInt(payload[payload.length - 1]),
+    destination = findSlider(ev.target);
+  if (activePlayers[destination])
+    activePlayers[destination].stop();
+  activePlayers[destination] = players[source];
+  activePlayers[destination].start();
+  sliders[destination].tone = players[source];
+}
+
+function findSlider(el) {
+  var sliders = document.getElementsByClassName('Dragger');
+  for (var i = 0; i < sliders.length; i++)
+    if (sliders[i] === el)
+      return i;
+  return -1;
 }

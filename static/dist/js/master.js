@@ -2,6 +2,7 @@ window.markers = [];
 
 window.addEventListener('load', function () {
   var aboutTabButtons = document.getElementById('tab-buttons');
+  var overlays = document.getElementsByClassName('overlay');
 
   if (aboutTabButtons) {
     var lis = aboutTabButtons.getElementsByTagName('li');
@@ -14,7 +15,17 @@ window.addEventListener('load', function () {
   for (var i = 0; i < nav.length; i++)
     if (nav[i].href === window.location.href)
       nav[i].classList.add('current');
+
+  if (overlays) {
+    for (var i = 0; i < overlays.length; i++)
+      overlays[i].onclick = hitOverlay;
+  }
 });
+
+function hitOverlay(evt) {
+  if (evt.target.classList.contains('overlay'))
+    evt.target.classList.remove('up');
+}
 
 function handleAboutTabClick(evt) {
   var element = evt.path[0],

@@ -40,7 +40,7 @@ Interface.Loader();
 var sliders = [];
 for (var i = 0; i < 3; i++)
   sliders.push(Interface.Slider({
-    name: "Sound#" + (i + 1),
+    name: "Drag icon here",
     param: 'volume',
     parent: $('#sliders'),
     //tone: null,

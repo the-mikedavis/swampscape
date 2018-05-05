@@ -27,6 +27,7 @@ nav, footer {
     float: right;
 
     a {
+      letter-spacing: 3px;
       display: block;
       color: $white;
       text-align: center;
@@ -438,6 +439,9 @@ div#symphony-player {
   nav {
     padding: 0 10%;
     margin-bottom: 5px;
+    li#aboutNavLink {
+      margin-right: 15px;
+    }
   }
   footer {
     padding: 0 10%;
@@ -486,7 +490,7 @@ div#symphony-player {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 767px) {
   nav li {
 
     border-top: 1px solid $grey;
@@ -564,6 +568,10 @@ div#symphony-player {
     }
   }
   div#symphony-landing {
+    &.slid {
+      left: 0;
+    }
+
     min-height: auto;
     img {
       height: initial;
@@ -583,5 +591,13 @@ div#symphony-player {
   }
   div#symphony-player {
     display: none;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  nav, footer {
+    li a {
+      margin: 0 15px;
+    }
   }
 }

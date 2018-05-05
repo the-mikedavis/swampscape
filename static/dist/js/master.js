@@ -23,8 +23,10 @@ window.addEventListener('load', function () {
 });
 
 function hitOverlay(evt) {
-  if (evt.target.classList.contains('overlay'))
+  if (evt.target.classList.contains('overlay')) {
     evt.target.classList.remove('up');
+    stopVideo(evt.target);
+  }
 }
 
 function handleAboutTabClick(evt) {
@@ -59,7 +61,18 @@ function playFilm(slug) {
 }
 
 function closeOverlay(slug) {
-  selectOverlay(slug).classList.remove('up');
+  var element = selectOverlay(slug);
+  element.classList.remove('up');
+  stopVideo(element);
+}
+
+// this gist: https://gist.github.com/cferdinandi/9044694
+function stopVideo(element) {
+  var iframe = element.querySelector('iframe');
+  if (iframe) {
+    var isrc = iframe.src;
+    iframe.src = isrc;
+  }
 }
 
 function openMap(data) {

@@ -22,25 +22,14 @@ function handleAboutTabClick(evt) {
     tab = document.querySelector('div.' + element.className),
     img = document.querySelector('img.' + element.className);
 
-  if (element.classList.contains('tab-buttons-active')) {
-    element.classList.remove('tab-buttons-active');
-    tab = document.querySelector('div.' + element.className);
-    tab.classList.remove('active');
-    img = document.querySelector('img.' + element.className);
-    img.classList.remove('active');
-    document.querySelector('div.t3-0').classList.add('active');
-    document.querySelector('img.t3-0').classList.add('active');
-    return
-  } else if (prev) {
-    prev.classList.remove('tab-buttons-active');
-    document.querySelector('div.' + prev.className)
-      .classList.remove('active');
-    document.querySelector('img.' + prev.className)
-      .classList.remove('active');
-  } else {
-    document.querySelector('div.t3-0').classList.remove('active');
-    document.querySelector('img.t3-0').classList.remove('active');
-  }
+  //  click on active one
+  if (element.classList.contains('tab-buttons-active')) return;
+
+  prev.classList.remove('tab-buttons-active');
+  document.querySelector('div.' + prev.className)
+    .classList.remove('active');
+  document.querySelector('img.' + prev.className)
+    .classList.remove('active');
 
   element.classList.add('tab-buttons-active');
   tab.classList.add('active');

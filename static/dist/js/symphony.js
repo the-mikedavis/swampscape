@@ -11,9 +11,12 @@ var composition = new Tone.Player({
 }).toMaster();
 composition.autostart = true;
 
-function startComposition() {
+function toggleComposition() {
   try {
-    composition.start();
+    if (composition.state === "started")
+      composition.stop();
+    else
+      composition.start();
   } catch (e) {
     console.log("Composition hasn't finished loading yet. Please try again.");
   }

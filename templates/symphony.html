@@ -15,7 +15,7 @@
   <img class="full-size" src="/dist/images/2.0.jpg" />
   <div id="symphony-copy" class="indent">
     <h2>SWAMP SYMPHONY</h2>
-    <p onclick="startComposition()" class="two-thirds"><i class="fas fa-volume-up"></i> {{ symphony['2.0'] }}</p>
+    <p onclick="toggleComposition()" class="two-thirds">{{ symphony['2.0'] }}</p>
     <button id="enterSymphony" onclick="slideOver()" class="controls watch">&raquo; Make your own soundscape!</button>
     <button id="seeSymphony">Tap the paragraph above to hear the symphony. See this site on a computer or tablet to create your own soundscape.</button>
   </div>
@@ -42,7 +42,6 @@
     </div>
   </div>
 </div>
-<div id='copyCircle'>
-</div>
+<div id='copyCircle'></div>
 <script type="text/javascript" src="/dist/js/symphony.js"></script>
 {% endblock %}

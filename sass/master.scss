@@ -387,9 +387,15 @@ div#symphony-player {
     top: 100px;
   }
 
-  #Content .Slider.x {
-    width: 90%;
-    margin-left: 5%;
+  #Content {
+    .Dragger #Name {
+      line-height: initial;
+      padding-top: 30px;
+    }
+    .Slider.x {
+      width: 90%;
+      margin-left: 5%;
+    }
   }
 
   .animalIcon {

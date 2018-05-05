@@ -9,6 +9,7 @@ for (var i = 0; i < 10; i++)
 var composition = new Tone.Player({
   url: '/dist/sounds/composition.mp3'
 }).toMaster();
+composition.autostart = true;
 
 function startComposition() {
   try {

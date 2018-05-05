@@ -319,25 +319,24 @@ code {
   padding: 1px; }
 
 #Loading {
-  z-index: 100000;
-  position: absolute;
+  z-index: 101;
+  position: fixed;
   background-color: rgba(140, 140, 140, 0.5);
   width: 100%;
-  height: calc(100% - 37.5px);
-  top: 37.5px;
-  left: 0px;
+  height: 100%;
+  top: 0;
+  left: 0;
   opacity: 1;
   transition: opacity 0.4s; }
   #Loading #Text {
+    z-index: 102;
     color: white;
-    position: absolute;
+    position: fixed;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    margin-left: -150px;
-    height: 60px;
-    margin-top: -30px;
+    top: 300px;
+    left: 0;
+    /* TODO make this 100% when chrome renders it correctly */
+    width: 50%;
     line-height: 60px;
     font-size: 42px; }
 

@@ -50,64 +50,6 @@ for (var i = 0; i < 3; i++)
     max: 15
   }));
 
-/*
-window.addEventListener('load', function () {
-  var sliders = document.getElementsByClassName('Dragger');
-  for (var i = 0; i < sliders.length; i++) {
-    sliders[i].ondrop = handleDrop;
-    sliders[i].ondragover = allowDrop;
-  }
-});
-
-var painfullyGlobalVariable = "";
-
-function handleDrop(ev) {
-  var el = ev.target;
-  console.log(ev);
-  while (el != null) {
-    if (el.classList && el.classList.contains('Dragger'))
-      break;
-    el = el.parentElement;
-  }
-
-  if (painfullyGlobalVariable) {
-    var payload = painfullyGlobalVariable.replace(/-/g, ".");
-    el.innerHTML = '<img src="/dist/images/icons/' + payload + '.png"' +
-      'class="sliderIcon">';
-    var source = parseInt(payload[payload.length - 1]),
-      destination = findSlider(el);
-    if (activePlayers[destination])
-      activePlayers[destination].stop();
-    activePlayers[destination] = players[source];
-    sliders[destination].tone = players[source];
-    togglePlay();
-    togglePlay();
-  }
-  painfullyGlobalVariable = null;
-}
-
-function findSlider(el) {
-  var sliders = document.getElementsByClassName('Dragger');
-  for (var i = 0; i < sliders.length; i++)
-    if (sliders[i] === el)
-      return i;
-  return -1;
-}
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  painfullyGlobalVariable = ev.target.id;
-}
-
-document.body.ondrop = function (event) {
-  event.preventDefault();
-  event.stopPropagation();
-}
-*/
-
 window.addEventListener('load', function () {
   interact('.animalIcon').draggable({
     autoScroll: true,
@@ -122,10 +64,16 @@ window.addEventListener('load', function () {
 
 function moveDrag(ev) {
   // make it appear and follow the move
+  var circle = document.getElementById('copyCircle');
+  circle.style.display = 'block';
+  console.log(ev);
+  circle.style.left = (ev.pageX - 25) + 'px';
+  circle.style.top = (ev.pageY - 25) + 'px';
 }
 
 function endDrag(ev) {
   // make it disappear
+  document.getElementById('copyCircle').style.display = 'none';
 }
 
 function dropHandle(ev) {

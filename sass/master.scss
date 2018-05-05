@@ -431,6 +431,16 @@ div#symphony-player {
   }
 }
 
+div#copyCircle {
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 100;
+  background-color: black;
+}
+
 @media (min-width: 1200px) {
   //$background_large_color: darken($everglade, 10%);
   $background_large_color: white;

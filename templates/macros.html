@@ -24,14 +24,14 @@
 </div>
 
 <div class="{{ g.slug }} flat overlay">
-  <button onclick='closeOverlay("flat.{{ g.slug }}")'>Close X</button>
+  <button onclick='closeOverlay("flat.{{ g.slug }}")'>Close <i class="fas fa-times"></i></button>
   <div class="popup video">
     {{ g.vimeo.html | safe }}
   </div>
 </div>
 
 <div class="{{ g.slug }} dimensional overlay">
-  <button onclick='closeOverlay("dimensional.{{ g.slug }}")'>Close X</button>
+  <button onclick='closeOverlay("dimensional.{{ g.slug }}")'>Close <i class="fas fa-times"></i></button>
   <div class="popup">
     {{ g.vimeo360.html | safe }}
   </div>

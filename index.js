@@ -24,6 +24,10 @@ app.get('/', function(req, res) {
   res.render("landing.html", sheets.cache);
 });
 
+app.get('/swamp-slider', function(req, res) {
+  res.render("slider.html", sheets.cache);
+});
+
 app.get('/guides', function(req, res) {
   res.render('guides.html', sheets.cache);
 });

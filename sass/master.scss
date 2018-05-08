@@ -138,6 +138,15 @@ div.black {
   }
 }
 
+div#first-copy {
+  background-color: rgba($black, 0.5);
+  position: absolute;
+  bottom: 80px;
+  width: 70%;
+  color: white;
+  padding: 50px 5% 0 5%;
+}
+
 .full-size {
   width: 100%;
 }
@@ -216,7 +225,7 @@ button {
   background-color: $nepal;
   width: 200px;
   margin-left: 10%;
-  margin-top: 150px;
+  margin-top: 100px;
   padding: 10px 0;
   border-radius: 5px;
   i.fas {

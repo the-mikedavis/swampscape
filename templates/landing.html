@@ -7,11 +7,12 @@
 
 {% block body %}
 {{ image('0.0.jpg') }}
+<button id="play-trailer" onclick="playFilm('trailer')"><i class="fas fa-play-circle"></i></button>
 <div id="first-copy">
-  <p class="two-thirds">{{ home['0.2'] }}</p>
-  <div class="controls">
+  <p>{{ home['0.2'] }}</p>
+  <!-- <div class="controls">
     <button onclick="playFilm('trailer')" class="watch">Watch the trailer <i class="fas fa-play-circle"></i></button>
-  </div>
+  </div> -->
 </div>
 <div class="overlay trailer">
   <button onclick='closeOverlay("trailer")'>Close X</button>

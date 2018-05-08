@@ -445,7 +445,7 @@ div#copyCircle {
 
 @media (min-width: 1200px) {
   //$background_large_color: darken($everglade, 10%);
-  $background_large_color: white;
+  $background_large_color: $black;
 
   .main {
     background-color: $background_large_color;

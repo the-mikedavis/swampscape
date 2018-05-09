@@ -1,92 +1,11 @@
 @import "constants";
-
-#dropdown, #seeSymphony {
-  display: none;
-}
+@import "navigation";
+@import "symphony";
 
 html, body {
   margin: 0;
   padding: 0;
   background-color: $black;
-}
-
-ul {
-  list-style-type: none;
-}
-
-nav {
-  border-bottom: 6px solid $everglade;
-}
-
-nav, footer {
-  z-index: 500;
-  background-color: $black;
-  padding: 0 5%;
-  ul {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  li {
-    float: right;
-    a {
-      letter-spacing: 3px;
-      display: block;
-      color: $white;
-      text-align: center;
-      text-decoration: none;
-      &:hover {
-        color: $grey;
-      }
-    }
-
-    &:hover {
-      background-color: #111;
-    }
-    &:first-child {
-      border-top: none;
-      float: left;
-      a {
-        padding-left: 0;
-        margin-left: 0;
-      }
-    }
-  }
-
-  div#burgable {
-    z-index: 501;
-    width: 80%;
-    float: right;
-
-    li {
-      float: right;
-      display: inline-block;
-
-      &:first-child a {
-        margin-left: 30px;
-      }
-    }
-  }
-}
-
-nav li a {
-  padding: 17px 20px 10px 20px;
-  margin: 0 30px;
-}
-
-footer li:first-child a {
-  padding-left: 0;
-}
-
-#logo {
-  padding: 0;
-  a {
-    padding-top: 10px;
-  }
-  img {
-    width: 170px;
-  }
 }
 
 img {
@@ -101,6 +20,9 @@ p {
 div.main {
   margin: 0;
   padding: 0;
+  padding-bottom: 15px;
+  border-top: 1px solid $everglade;
+  border-bottom: 1px solid $everglade;
 }
 
 
@@ -140,17 +62,16 @@ div.indent {
 }
 
 div.black {
-  //padding: 50px 15%;
   background-color: $black;
   color: white;
   &.indent {
     padding: 20px 5%;
     h2 {
-      margin-top: 0;
+      margin-top: 10px;
       margin-bottom: 10px;
       text-align: left;
       margin-left: 0;
-      color: $nepal;
+      color: $everglade;
       letter-spacing: 1px;
     }
   }
@@ -159,7 +80,7 @@ div.black {
 #play-trailer {
   font-size: 80px;
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: calc(50% - 40px);
   z-index: 5;
   color: rgba($white, 0.8);
@@ -186,13 +107,12 @@ footer {
   width: auto;
   padding: 0 5%;
   background-color: $black;
-  border-top: 6px solid $everglade;
   li {
     &:hover {
       background-color: $black;
     }
     a {
-      color: $nepal;
+      color: $grey;
       padding: 25px 8px;
     }
   }
@@ -215,8 +135,9 @@ footer {
   float: right;
   width: 33%;
   position: relative;
-  top: -75px;
+  top: -20px;
   li {
+    min-width: 200px;
     margin-top: 10px;
     text-align: left;
   }
@@ -231,10 +152,6 @@ footer {
       margin-right: 7px;
     }
   }
-}
-
-.current {
-  color: $nepal;
 }
 
 // remove button styling
@@ -333,6 +250,8 @@ div#guidenav {
   padding: 5%;
   h1 {
     color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
   }
   .thumb {
     width: 90%;
@@ -402,7 +321,7 @@ div#copyCircle {
     div#burgable {
       background-color: $black;
       display: none;
-      
+
       &.hamburged {
         display: block;
         position: absolute;
@@ -423,7 +342,7 @@ div#copyCircle {
         position: absolute;
         top: 15px;
         right: 11%;
-        color: $nepal;
+        color: white;
         border-top: none;
         font-size: 20px;
       }
@@ -461,7 +380,6 @@ div#copyCircle {
 }
 
 @media (min-width: 1200px) {
-  //$background_large_color: darken($everglade, 10%);
   $background_large_color: $black;
   div#first-copy {
     width: 70%;
@@ -472,15 +390,15 @@ div#copyCircle {
   }
 
   div.main {
-    padding: 0 10%;
+    width: 80%;
+    margin-left: 10%;
   }
   nav {
     padding: 0 10%;
   }
   footer {
     padding: 0 10%;
-    //border-top: 6px solid $background_large_color;
-    border-top: 6px solid $everglade;
+    //border-top: 6px solid $everglade;
   }
   div#guidebody {
     width: 70%;
@@ -522,23 +440,9 @@ div#copyCircle {
 
 @media (max-width: 767px) {
 
-  nav {
-    li#dropdown {
-      right: 20px;
-    }
-
-    div#burgable.hamburged {
-      width: 150px;
-      li {
-        width: 150px;
-      }
-    }
-  }
-
   #play-trailer {
     font-size: 36px;
     left: calc(50% - 18px);
-    top: 30%;
   }
   div#first-copy {
     position: static;
@@ -566,9 +470,14 @@ div#copyCircle {
       text-align: left;
     }
   }
-  .guide-controls button {
-    margin: 0;
-    display: inline-block;
+  .guide-controls {
+    button {
+      margin: 0;
+      display: inline-block;
+    }
+    li {
+      min-width: 200px;
+    }
   }
   .indent.black h2 {
     -webkit-margin-before: 0;

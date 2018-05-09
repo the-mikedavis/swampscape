@@ -1,0 +1,90 @@
+#dropdown {
+  display: none;
+}
+
+nav, footer {
+  z-index: 500;
+  background-color: $black;
+  padding: 0 5%;
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: right;
+    a {
+      letter-spacing: 3px;
+      display: block;
+      color: $white;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        color: $grey;
+      }
+    }
+
+    &:hover {
+      background-color: #111;
+    }
+    &:first-child {
+      border-top: none;
+      float: left;
+      a {
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+  div#burgable {
+    z-index: 501;
+    width: 80%;
+    float: right;
+
+    li {
+      float: right;
+      display: inline-block;
+
+      &:first-child a {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+nav li a {
+  padding: 17px 20px 10px 20px;
+  margin: 0 30px;
+}
+
+footer li:first-child a {
+  padding-left: 0;
+}
+
+#logo {
+  padding: 0;
+  a {
+    padding-top: 10px;
+  }
+  img {
+    width: 170px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  nav {
+    li#dropdown {
+      right: 20px;
+    }
+
+    div#burgable.hamburged {
+      width: 150px;
+      li {
+        width: 150px;
+      }
+    }
+  }
+}

@@ -10,12 +10,6 @@ window.addEventListener('load', function () {
       lis[i].addEventListener('click', handleAboutTabClick);
   }
 
-  // highlight the active nav tab
-  var nav = document.querySelectorAll('nav > ul > li > a');
-  for (var i = 0; i < nav.length; i++)
-    if (nav[i].href === window.location.href)
-      nav[i].classList.add('current');
-
   if (overlays) {
     for (var i = 0; i < overlays.length; i++)
       overlays[i].onclick = hitOverlay;

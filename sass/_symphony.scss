@@ -11,22 +11,25 @@
 
 p#buffer {
   margin-top: 350px;
+  margin-bottom: 50px;
 }
 
 .animalTile {
-  width: 150px;
+  vertical-align: top;
+  width: 100px;
+  min-height: 150px;
   display: inline-block;
 }
 .animalIcon {
-  width: 150px;
+  width: 100px;
   cursor: -webkit-grab;
   cursor: grab;
 }
 .sliderIcon {
-  width: 148px;
+  width: 90px;
   position: relative;
-  left: -29px;
-  top: -29px;
+  //left: -29px;
+  //top: -29px;
   cursor: -webkit-grab;
   cursor: grab;
 }

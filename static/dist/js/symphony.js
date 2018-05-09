@@ -65,7 +65,6 @@ for (var i = 0; i < 3; i++)
 
 window.addEventListener('load', function () {
   interact('.animalIcon').draggable({
-    autoScroll: true,
     onmove: moveDrag,
     onend: endDrag
   });

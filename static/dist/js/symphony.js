@@ -9,14 +9,24 @@ for (var i = 0; i < 10; i++)
 var composition = new Tone.Player({
   url: '/dist/sounds/composition.mp3'
 }).toMaster();
-composition.autostart = true;
 
 function toggleComposition() {
+  for (var i = 0; i < 3; i++)
+    if (activePlayers[i])
+      activePlayers[i].stop();
+
   try {
-    if (composition.state === "started")
+    if (composition.state === "started") {
       composition.stop();
-    else
+      for (var i = 0; i < 3; i++)
+        if (activePlayers[i])
+          activePlayers[i].start();
+    } else {
+      for (var i = 0; i < 3; i++)
+        if (activePlayers[i])
+          activePlayers[i].stop();
       composition.start();
+    }
   } catch (e) {
     console.log("Composition hasn't finished loading yet. Please try again.");
   }

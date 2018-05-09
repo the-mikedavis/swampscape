@@ -340,123 +340,49 @@ div#guidenav {
   }
 }
 
-div#symphony-copy {
-
-  .controls {
-    position: relative;
-    top: 0;
-    margin-left: 3%;
+#Content {
+  .Dragger #Name {
+    line-height: initial;
+    padding-top: 30px;
   }
-
-  #enterSymphony {
-    text-align: center;
-    margin-top: 0;
-  }
-
-  h2 {
-    margin-bottom: 40px;
-  }
-  p {
-    cursor: pointer;
-    color: black;
-  }
-}
-
-div#symphony-landing {
-  img {
-    height: 600px;
-  }
-
-  position: relative;
-  top: 0;
-  left: 0;
-  transition: left 1s;
-  min-height: 900px;
-
-  &.slid {
-    left: -100%;
-  }
-
-  .indent {
-    height: 250px;
-  }
-}
-
-div#symphony-player {
-  background-color: $white;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: left 1s;
-  margin-top: 60px;
-  width: 100%;
-  height: 840px;
-
-  &.slid {
-    left: 0%;
+  .Slider.x {
     width: 90%;
-  }
-
-  p.center {
-    margin-top: 400px;
-  }
-
-  a {
     margin-left: 5%;
-    text-decoration: none;
-    color: black;
-    position: relative;
-    top: 100px;
+  }
+}
+
+p#buffer {
+  margin-top: 350px;
+}
+
+.animalTile {
+  width: 150px;
+  display: inline-block;
+}
+.animalIcon {
+  width: 150px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.sliderIcon {
+  width: 148px;
+  position: relative;
+  left: -29px;
+  top: -29px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+$thumb_width: 100px;
+
+div#soundIcons {
+  .caption {
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
   }
 
-  #Content {
-    .Dragger #Name {
-      line-height: initial;
-      padding-top: 30px;
-    }
-    .Slider.x {
-      width: 90%;
-      margin-left: 5%;
-    }
-  }
-
-  .animalIcon {
-    width: 150px;
-    position: relative;
-    left: -25px;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-  .sliderIcon {
-    width: 148px;
-    position: relative;
-    left: -29px;
-    top: -29px;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-
-  div#iconContainer {
-    position: absolute;
-    right: 10%;
-    bottom: 100px;
-
-    $thumb_width: 100px;
-    $thumb_height: 125px;
-
-    div#soundIcons {
-      display: grid;
-      grid-template-columns: $thumb_width $thumb_width $thumb_width $thumb_width $thumb_width;
-      grid-template-rows: $thumb_height $thumb_height;
-      width: 500px;
-
-      .caption {
-        font-size: 12px;
-        text-align: center;
-        height: 30px;
-      }
-    }
-  }
+  margin-bottom: 50px;
 }
 
 div#copyCircle {
@@ -587,13 +513,9 @@ div#copyCircle {
       }
     }
   }
-  div#symphony-landing.slid {
-    left: -150%;
-  }
-  div#symphony-player div#iconContainer {
-    position: static;
-    width: 500px;
-    margin: 0 auto;
+  #Content .Slider.x {
+    width: 70%;
+    margin-left: 15%;
   }
 }
 
@@ -669,32 +591,6 @@ div#copyCircle {
       }
     }
   }
-  div#symphony-landing {
-    &.slid {
-      left: 0;
-    }
-
-    min-height: auto;
-    img {
-      height: initial;
-      width: 100%;
-    }
-    div#symphony-copy button {
-      font-size: 12px;
-      text-align: left;
-    }
-    #enterSymphony {
-      display: none;
-    }
-    #seeSymphony {
-      display: initial;
-      margin-top: 20px;
-    }
-  }
-  div#symphony-player {
-    display: none;
-  }
-
 }
 
 @media (max-width: 900px) and (min-width: 768px) {

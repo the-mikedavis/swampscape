@@ -11,36 +11,22 @@
 {% endblock %}
 
 {% block body %}
-<div id="symphony-landing">
-  <img class="full-size" src="/dist/images/2.0.jpg" />
-  <div id="symphony-copy" class="indent">
-    <h2>SWAMP SYMPHONY</h2>
-    <p onclick="toggleComposition()" class="two-thirds">{{ symphony['2.0'] }}</p>
-    <button id="enterSymphony" onclick="slideOver()" class="controls watch">&raquo; Make your own soundscape!</button>
-    <button id="seeSymphony">Tap the paragraph above to hear the symphony. See this site on a computer or tablet to create your own soundscape.</button>
-  </div>
-</div>
-<div class="indent" id="symphony-player">
+<div class="indent">
+  <h2>SWAMP SYMPHONY</h2>
   <div id="Content"><div id="sliders"></div></div>
-  <p class="center">{{ symphony['2.1'] }}</p>
-  <div id="iconContainer">
-    <div id="soundIcons">
+  <p id="buffer" class="center">{{ symphony['2.1'] }}</p>
+  <div id="soundIcons">
     {% for i in range(0, 10) %}
-      <div>
-        {% if i < 5 %}
-          <p class="caption">{{ symphony['2.2.' + i] }}</p>
-        {% endif %}
-
+      <div class="animalTile">
         <img id='2-2-{{i}}' class="animalIcon" src="/dist/images/icons/2.2.{{i}}.png" draggable='true'/>
-
-        {% if i >= 5 %}
-          <p class="caption">{{ symphony['2.2.' + i] }}</p>
-        {% endif %}
+        <p class="caption">{{ symphony['2.2.' + i] }}</p>
       </div>
     {% endfor %}
-    </div>
   </div>
+  <div id="copyCircle"></div>
+  <p>{{ symphony['2.0'] }}
+    <button onclick="toggleComposition()"><i class="fas fa-volume-up"></i>
+  </button></p>
 </div>
-<div id='copyCircle'></div>
 <script type="text/javascript" src="/dist/js/symphony.js"></script>
 {% endblock %}

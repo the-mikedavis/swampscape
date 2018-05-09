@@ -591,8 +591,17 @@ div#copyCircle {
 
 @media (max-width: 767px) {
 
-  nav li#dropdown {
-    right: 20px;
+  nav {
+    li#dropdown {
+      right: 20px;
+    }
+
+    div#burgable.hamburged {
+      width: 150px;
+      li {
+        width: 150px;
+      }
+    }
   }
 
   #play-trailer {

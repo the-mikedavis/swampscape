@@ -2,26 +2,27 @@ $black: #111;
 $grey: #CCCCCC;
 $white: #FFFFFF;
 $nepal: #98B4C2;
-$everglade: #839B12;
+//$everglade: #839B12;
+$everglade: #D9D269;
 $lightgreen: #B4C75E;
 
+/*
 @font-face {
   font-family: 'Didot';
   src: url('/dist/fonts/didot.ttf') format('ttf');
 }
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica');
+*/
 
-$display: 'Didot', serif;
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC');
+
+$display: 'IM Fell Double Pica', serif;
+$logo_font: 'IM Fell Double Pica SC', serif;
 $copy: 'IM Fell Double Pica', Helvetica, Arial, sans-serif;
 
 h1 {
   font-family: $display;
   font-size: 30px;
-}
-
-h2 {
-  font-family: $display;
-  font-size: 36px;
 }
 
 h3 {
@@ -44,11 +45,21 @@ nav {
   font-size: 16px;
 }
 
+
+h2, #logo a {
+  font-family: $display;
+  font-size: 36px;
+}
+
+#logo a {
+  font-family: $logo_font;
+}
+
 @media (max-width: 850px) {
   h1 {
     font-size: 30px;
   }
-  h2 {
+  h2, #logo {
     font-size: 25px;
   }
   h3 {
@@ -61,3 +72,8 @@ nav {
     font-size: 12px;
   }
 }
+
+ul {
+  list-style-type: none;
+}
+

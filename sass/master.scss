@@ -498,7 +498,7 @@ div#copyCircle {
 
       &:first-child {
         float: none;
-        display: initial;
+        display: inline-block;
 
         a {
           display: block;
@@ -591,17 +591,8 @@ div#copyCircle {
 
 @media (max-width: 767px) {
 
-  nav {
-    div#burgable.hamburged {
-      position: static;
-      width: 100%;
-      li {
-        width: 100%;
-      }
-    }
-    li#dropdown {
-      right: 20px;
-    }
+  nav li#dropdown {
+    right: 20px;
   }
 
   #play-trailer {

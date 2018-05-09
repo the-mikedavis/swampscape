@@ -144,7 +144,10 @@ div.black {
   background-color: $black;
   color: white;
   &.indent {
+    padding: 20px 5%;
     h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
       text-align: left;
       margin-left: 0;
       color: $nepal;

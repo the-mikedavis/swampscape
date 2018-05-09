@@ -3,6 +3,7 @@ window.markers = [];
 window.addEventListener('load', function () {
   var aboutTabButtons = document.getElementById('tab-buttons');
   var overlays = document.getElementsByClassName('overlay');
+  var jux = document.getElementsByClassName('juxtapose')[0];
 
   if (aboutTabButtons) {
     var lis = aboutTabButtons.getElementsByTagName('li');
@@ -13,6 +14,17 @@ window.addEventListener('load', function () {
   if (overlays) {
     for (var i = 0; i < overlays.length; i++)
       overlays[i].onclick = hitOverlay;
+  }
+
+  if (jux) {
+    window.ratio = jux.offsetHeight / jux.offsetWidth;
+
+    window.addEventListener('resize', function () {
+      var width = jux.parentElement.clientWidth * 0.9,
+        height = width * window.ratio;
+      jux.style.width = width + 'px';
+      jux.style.height = height + 'px';
+    });
   }
 });
 

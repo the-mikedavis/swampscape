@@ -123,15 +123,6 @@ function slideOver() {
 }
 
 function toggleMenu() {
-  /*
-  var els = document.querySelectorAll('nav > ul > li');
-  for (var i = 0; i < els.length; i++) {
-    if (els[i].classList.contains('hamburged'))
-      els[i].classList.remove('hamburged');
-    else
-      els[i].classList.add('hamburged');
-  }
-  */
   var el = document.getElementById('burgable');
   if (el.classList.contains('hamburged'))
     el.classList.remove('hamburged');

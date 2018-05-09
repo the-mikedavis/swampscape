@@ -9,17 +9,9 @@ $lightgreen: #B4C75E;
   font-family: 'Didot';
   src: url('/dist/fonts/didot.ttf') format('ttf');
 }
-//@import url('https://fonts.googleapis.com/css?family=Quicksand');
-/*
-@font-face {
-  font-family: 'IMF';
-  src: url('/dist/fonts/IMF.ttf') format('ttf');
-}
-*/
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica');
 
 $display: 'Didot', serif;
-//$copy: 'Quicksand', Helvetica, Arial, sans-serif;
 $copy: 'IM Fell Double Pica', Helvetica, Arial, sans-serif;
 
 h1 {

@@ -117,30 +117,6 @@ div#first-copy {
   width: 66%;
 }
 
-.controls {
-  display: inline-block;
-  float: right;
-  width: 33%;
-  position: relative;
-  top: -20px;
-  li {
-    min-width: 200px;
-    margin-top: 10px;
-    text-align: left;
-  }
-
-  i.fas {
-    font-size: 20px;
-    margin-right: 5px;
-    color: $everglade;
-
-    &.fa-map-marker-alt {
-      margin-left: 2.5px;
-      margin-right: 7px;
-    }
-  }
-}
-
 // remove button styling
 button {
   background: none;
@@ -263,19 +239,6 @@ body {
   }
   .two-thirds {
     width: 100%;
-  }
-  .controls {
-    width: 100%;
-    position: static;
-    float: none;
-    button {
-      margin: 30px auto 0 auto;
-      display: block;
-    }
-    ul {
-      padding: 0;
-      text-align: left;
-    }
   }
   .indent.black h2 {
     -webkit-margin-before: 0;

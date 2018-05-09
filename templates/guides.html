@@ -24,9 +24,9 @@
 <div id="guidenav">
   <h1>Select your guide</h1>
   {% for i in range(1, guides.length + 1) %}
-  <button onclick="selectGuide('{{guides[i-1].slug}}')">
-    <img src="/dist/images/1.{{i}}_Guide_Thumbnail.jpg" class="thumb"/>
-  </button>
+    <img src="/dist/images/1.{{i}}_Guide_Thumbnail.jpg"
+      onclick="selectGuide('{{guides[i-1].slug}}')"
+      class="thumb"/>
   {% endfor %}
 </div>
 {% endblock %}

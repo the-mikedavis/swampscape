@@ -1,6 +1,7 @@
 @import "constants";
 @import "navigation";
 @import "symphony";
+@import "guides";
 
 html, body {
   margin: 0;
@@ -18,6 +19,7 @@ p {
 }
 
 div.main {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   padding-bottom: 15px;
@@ -101,21 +103,6 @@ div#first-copy {
 
 .center {
   text-align: center;
-}
-
-footer {
-  width: auto;
-  padding: 0 5%;
-  background-color: $black;
-  li {
-    &:hover {
-      background-color: $black;
-    }
-    a {
-      color: $grey;
-      padding: 25px 8px;
-    }
-  }
 }
 
 .tab {
@@ -242,143 +229,6 @@ body {
   }
 }
 
-div#guidenav {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 20%;
-  padding: 5%;
-  h1 {
-    color: white;
-    letter-spacing: 2px;
-    font-size: 20px;
-  }
-  .thumb {
-    width: 90%;
-    margin: 5px 0;
-    border: 1px solid $white;
-  }
-}
-
-#Content {
-  .Dragger #Name {
-    line-height: initial;
-    padding-top: 30px;
-  }
-  .Slider.x {
-    width: 90%;
-    margin-left: 5%;
-  }
-}
-
-p#buffer {
-  margin-top: 350px;
-}
-
-.animalTile {
-  width: 150px;
-  display: inline-block;
-}
-.animalIcon {
-  width: 150px;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-.sliderIcon {
-  width: 148px;
-  position: relative;
-  left: -29px;
-  top: -29px;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-$thumb_width: 100px;
-
-div#soundIcons {
-  .caption {
-    font-size: 12px;
-    text-align: center;
-    height: 30px;
-  }
-
-  margin-bottom: 50px;
-}
-
-div#copyCircle {
-  display: none;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 100;
-  background-color: black;
-}
-
-
-@media (max-width: 1380px) {
-  nav {
-    div#burgable {
-      background-color: $black;
-      display: none;
-
-      &.hamburged {
-        display: block;
-        position: absolute;
-        right: 10%;
-        width: 250px;
-        li {
-          display: block;
-          width: 250px;
-        }
-      }
-    }
-    li {
-
-      border-top: 1px solid $grey;
-
-      &#dropdown {
-        display: initial;
-        position: absolute;
-        top: 15px;
-        right: 11%;
-        color: white;
-        border-top: none;
-        font-size: 20px;
-      }
-
-      float: none;
-      display: none;
-
-      &:first-child {
-        float: none;
-        display: inline-block;
-
-        a {
-          display: block;
-        }
-      }
-
-      a {
-        margin: 0;
-        padding: 5px 20px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  nav {
-      div#burgable.hamburged {
-      right: 5%;
-    }
-    li#dropdown {
-      right: 5%;
-    }
-  }
-
-}
-
 @media (min-width: 1200px) {
   $background_large_color: $black;
   div#first-copy {
@@ -392,49 +242,6 @@ div#copyCircle {
   div.main {
     width: 80%;
     margin-left: 10%;
-  }
-  nav {
-    padding: 0 10%;
-  }
-  footer {
-    padding: 0 10%;
-    //border-top: 6px solid $everglade;
-  }
-  div#guidebody {
-    width: 70%;
-    .nav-toggler {
-      display: none;
-    }
-    button {
-      text-align: left;
-    }
-  }
-
-  div#guidenav {
-    margin-top: 30px;
-    left: 70%;
-    padding: 3% 1%;
-    width: 20%;
-    overflow-y: scroll;
-    h1 {
-      margin-top: 0;
-      color: white;
-    }
-
-    button {
-      width: 49%;
-      display: inline-block;
-      margin: 5px 0;
-      padding: 0;
-      img.thumb {
-        margin: 0;
-        border: 1px solid $black;
-      }
-    }
-  }
-  #Content .Slider.x {
-    width: 70%;
-    margin-left: 15%;
   }
 }
 
@@ -470,21 +277,9 @@ div#copyCircle {
       text-align: left;
     }
   }
-  .guide-controls {
-    button {
-      margin: 0;
-      display: inline-block;
-    }
-    li {
-      min-width: 200px;
-    }
-  }
   .indent.black h2 {
     -webkit-margin-before: 0;
     margin-before: 0;
-  }
-  div#guidenav {
-    width: 40%;
   }
   body.slid {
     left: -50%;
@@ -499,14 +294,6 @@ div#copyCircle {
         width: 100%;
         margin-top: 5px;
       }
-    }
-  }
-}
-
-@media (max-width: 900px) and (min-width: 768px) {
-  nav, footer {
-    li a {
-      margin: 0 15px;
     }
   }
 }

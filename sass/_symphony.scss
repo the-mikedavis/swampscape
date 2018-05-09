@@ -1,0 +1,61 @@
+#Content {
+  .Dragger #Name {
+    line-height: initial;
+    padding-top: 30px;
+  }
+  .Slider.x {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+p#buffer {
+  margin-top: 350px;
+}
+
+.animalTile {
+  width: 150px;
+  display: inline-block;
+}
+.animalIcon {
+  width: 150px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.sliderIcon {
+  width: 148px;
+  position: relative;
+  left: -29px;
+  top: -29px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+$thumb_width: 100px;
+
+div#soundIcons {
+  .caption {
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
+  }
+
+  margin-bottom: 50px;
+}
+
+div#copyCircle {
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 100;
+  background-color: black;
+}
+
+@media (min-width: 1200px) {
+  #Content .Slider.x {
+    width: 70%;
+    margin-left: 15%;
+  }
+}

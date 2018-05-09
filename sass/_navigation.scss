@@ -54,13 +54,27 @@ nav, footer {
   }
 }
 
+footer {
+  width: auto;
+  padding: 0 5%;
+  background-color: $black;
+  li {
+    &:hover {
+      background-color: $black;
+    }
+    a {
+      color: $grey;
+      padding: 25px 8px;
+    }
+    &:first-child a {
+      padding-left: 0;
+    }
+  }
+}
+
 nav li a {
   padding: 17px 20px 10px 20px;
   margin: 0 30px;
-}
-
-footer li:first-child a {
-  padding-left: 0;
 }
 
 #logo {
@@ -85,6 +99,85 @@ footer li:first-child a {
       li {
         width: 150px;
       }
+    }
+
+  }
+
+}
+
+@media (max-width: 1380px) {
+  nav {
+    div#burgable {
+      background-color: $black;
+      display: none;
+
+      &.hamburged {
+        display: block;
+        position: absolute;
+        right: 10%;
+        width: 250px;
+        li {
+          display: block;
+          width: 250px;
+        }
+      }
+    }
+    li {
+
+      border-top: 1px solid $grey;
+
+      &#dropdown {
+        display: initial;
+        position: absolute;
+        top: 15px;
+        right: 11%;
+        color: white;
+        border-top: none;
+        font-size: 20px;
+      }
+
+      float: none;
+      display: none;
+
+      &:first-child {
+        float: none;
+        display: inline-block;
+
+        a {
+          display: block;
+        }
+      }
+
+      a {
+        margin: 0;
+        padding: 5px 20px;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 1200px) {
+  nav {
+      div#burgable.hamburged {
+      right: 5%;
+    }
+    li#dropdown {
+      right: 5%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  nav, footer {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  nav, footer {
+    li a {
+      margin: 0 15px;
     }
   }
 }

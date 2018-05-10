@@ -22,6 +22,7 @@ div.main {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  padding-top: 1px;
   border-top: 1px solid $everglade;
   border-bottom: 1px solid $everglade;
 }
@@ -98,6 +99,7 @@ div#first-copy {
 
 .full-size {
   width: 100%;
+  display: block;
 }
 
 .center {
@@ -107,7 +109,7 @@ div#first-copy {
 .tab {
   display: none;
   &.active {
-    display: initial;
+    display: block;
   }
 }
 

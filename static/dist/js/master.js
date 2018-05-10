@@ -36,7 +36,7 @@ function hitOverlay(evt) {
 }
 
 function handleAboutTabClick(evt) {
-  var element = evt.path[0],
+  var element = evt.target,
     prev = document.getElementsByClassName('tab-buttons-active')[0],
     tab = document.querySelector('div.' + element.className),
     img = document.querySelector('img.' + element.className);

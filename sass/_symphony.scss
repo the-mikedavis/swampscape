@@ -9,9 +9,21 @@
   }
 }
 
-p#buffer {
+div#buffer {
   margin-top: 350px;
   margin-bottom: 50px;
+}
+
+.mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 
 .animalTile {
@@ -28,8 +40,6 @@ p#buffer {
 .sliderIcon {
   width: 90px;
   position: relative;
-  //left: -29px;
-  //top: -29px;
   cursor: -webkit-grab;
   cursor: grab;
 }

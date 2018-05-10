@@ -14,7 +14,10 @@
 <div class="indent">
   <h2 class="center">SWAMP SYMPHONY</h2>
   <div id="Content"><div id="sliders"></div></div>
-  <p id="buffer" class="center">{{ symphony['2.1'] }}</p>
+  <div id="buffer">
+   <p class="center desktop">{{ symphony['2.1'] }}</p>
+   <p class="center mobile">Tap an animal to add it to your symphony!</p>
+  </div>
   <div id="soundIcons">
     {% for i in range(0, 10) %}
       <div class="animalTile">
@@ -24,11 +27,7 @@
     {% endfor %}
   </div>
   <div id="copyCircle"></div>
-  {#
-  <p>{{ symphony['2.0'] }}
-    <button onclick="toggleComposition()"><i class="fas fa-volume-up"></i>
-  </button></p>
-  #}
+  <p>{{ symphony['2.0'] }}</p>
 </div>
 <script type="text/javascript" src="/dist/js/symphony.js"></script>
 {% endblock %}

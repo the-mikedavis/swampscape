@@ -22,7 +22,6 @@ div.main {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  padding-bottom: 15px;
   border-top: 1px solid $everglade;
   border-bottom: 1px solid $everglade;
 }
@@ -74,7 +73,7 @@ div.black {
       text-align: left;
       margin-left: 0;
       color: $everglade;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
   }
 }
@@ -206,16 +205,12 @@ body {
 }
 
 @media (min-width: 1200px) {
-  $background_large_color: $black;
   div#first-copy {
     width: 70%;
   }
 
-  .main {
-    background-color: $background_large_color;
-  }
-
   div.main {
+    background-color: $black;
     width: 80%;
     margin-left: 10%;
   }

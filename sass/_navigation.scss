@@ -13,7 +13,7 @@ nav, footer {
   }
 
   li {
-    float: right;
+    //float: right;
     a {
       letter-spacing: 3px;
       display: block;
@@ -44,8 +44,9 @@ nav, footer {
     float: right;
 
     li {
-      float: right;
+      //float: right;
       display: inline-block;
+      //direction: rtl;
 
       &:first-child a {
         margin-left: 30px;
@@ -59,6 +60,7 @@ footer {
   padding: 0 5%;
   background-color: $black;
   li {
+    float: right;
     &:hover {
       background-color: $black;
     }
@@ -171,6 +173,9 @@ nav li a {
 @media (min-width: 1200px) {
   nav, footer {
     padding: 0 10%;
+    div#burgable {
+      width: fit-content;
+    }
   }
 }
 

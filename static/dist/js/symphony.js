@@ -63,15 +63,28 @@ for (var i = 0; i < 3; i++)
     max: 15
   }));
 
+var turn = 0;
+
 window.addEventListener('load', function () {
-  interact('.animalIcon').draggable({
-    onmove: moveDrag,
-    onend: endDrag
-  });
-  interact('.Dragger').dropzone({
-    accept: '.animalIcon',
-    ondrop: dropHandle
-  });
+  if (/Mobi/.test(navigator.userAgent)) {
+    console.log('mobile');
+    interact('.animalIcon').on('tap', function (event) {
+      dropHandle({
+        relatedTarget: event.target,
+        target: document.getElementsByClassName('Dragger')[turn]
+      });
+      turn = (turn + 1) % 3;
+    });
+  } else {
+    interact('.animalIcon').draggable({
+      onmove: moveDrag,
+      onend: endDrag
+    });
+    interact('.Dragger').dropzone({
+      accept: '.animalIcon',
+      ondrop: dropHandle
+    });
+  }
 });
 
 function moveDrag(ev) {

@@ -15,8 +15,10 @@
   <h2 class="center">SWAMP SYMPHONY</h2>
   <div id="Content"><div id="sliders"></div></div>
   <div id="buffer">
-   <p class="center desktop">{{ symphony['2.1'] }}</p>
-   <p class="center mobile">Tap an animal to add it to your symphony!</p>
+    <p id="reset" class="center" onclick="reset()">Start Over</p>
+    <p class="center desktop">{{ symphony['2.1'] }}</p>
+    <p class="center mobile">Tap an animal to add it to your symphony!</p>
+    <p class="center">Move the slider right or left to adjust volume.</p>
   </div>
   <div id="soundIcons">
     {% for i in range(0, 10) %}

@@ -46,13 +46,15 @@ div.indent {
         li {
           margin: 0;
           display: inline-block;
-          background-color: $grey;
+          background-color: $black;
+          color: white;
           padding: 10px 0;
           width: 24%;
           text-align: center;
 
           &.tab-buttons-active {
             background-color: $nepal;
+            color: black;
           }
           &:hover {
             cursor: pointer;
@@ -226,7 +228,7 @@ body {
 
   #play-trailer {
     font-size: 36px;
-    left: calc(50% - 18px);
+    left: calc(50% - 25px);
   }
   div#first-copy {
     position: static;

@@ -19,7 +19,7 @@ Interface.Loader = function(){
 
 		this.text = $("<div>", {
 			"id" : "Text",
-			"text" : "Loading"
+			"text" : "LOADING"
 		}).appendTo(this.element);
 
 		Tone.Buffer.on("load", function(){

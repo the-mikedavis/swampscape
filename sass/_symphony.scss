@@ -72,3 +72,13 @@ div#copyCircle {
     margin-left: 15%;
   }
 }
+
+#reset {
+  margin-bottom: 25px;
+  padding: 2.5px 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  &:active {
+    background-color: #ddd;
+  }
+}

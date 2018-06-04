@@ -1,3 +1,4 @@
+var DRAGGER_INNER='<div id="Name">Drag icon here</div>';
 var players = [];
 var activePlayers = [ null, null, null ];
 for (var i = 0; i < 10; i++)
@@ -121,4 +122,15 @@ function findSlider(el) {
     if (sliders[i] === el)
       return i;
   return -1;
+}
+
+function reset () {
+  for (var i = 0; i < 3; i++)
+    if (activePlayers[i])
+      activePlayers[i].stop();
+  activePlayers = [ null, null, null ];
+  var draggers = document.getElementsByClassName('Dragger');
+  for (var i = 0; i < sliders.length; i++)
+    if (draggers[i])
+      draggers[i].innerHTML = DRAGGER_INNER;
 }

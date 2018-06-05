@@ -25,15 +25,20 @@ div#buffer {
     display: block;
   }
 }
-
 .animalTile {
   vertical-align: top;
   width: 100px;
   min-height: 150px;
   display: inline-block;
 }
+@media (min-width: 768px) {
+  .animalTile {
+    width: 8%;
+  }
+}
 .animalIcon {
-  width: 100px;
+  //width: 100px;
+  width: 100%;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -43,8 +48,6 @@ div#buffer {
   cursor: -webkit-grab;
   cursor: grab;
 }
-
-$thumb_width: 100px;
 
 div#soundIcons {
   .caption {

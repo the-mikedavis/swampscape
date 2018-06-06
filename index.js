@@ -14,7 +14,7 @@ nun.configure('templates', {
 
 auth(sheets.fullImport);
 //  update from Google sheets
-let interval = setInterval(() => auth(sheets.fullImport), 10 * 60 * 1000);
+let interval = setInterval(() => auth(sheets.fullImport), 2 * 60 * 60 * 1000);
 
 app.use(express.static(path.join(__dirname, 'static')));
 
